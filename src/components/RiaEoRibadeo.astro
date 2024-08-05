@@ -1,0 +1,53 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="flex flex-col items-center justify-center gap-6">
+  <h3 class="text-center text-3xl text-sky-700 uppercase">
+    {t('ribadeo.title01')}
+    <span class="font-bold">{t('ribadeo.title02')}</span>
+    {t('ribadeo.title03')}
+  </h3>
+
+  <div class="flex flex-col lg:flex-row gap-6 items-center">
+    <img src="carousel2.jpg" alt="" class="lg:w-2/4" />
+
+    <div class="px-4 lg:w-1/4 flex flex-col gap-4">
+      <p>
+        {t('ribadeo.description')}
+      </p>
+
+      <div class="flex flex-col gap-5">
+        <a
+          href="https://www.turismoasturias.es/descubre/costa/villas-marineras/marinera-figueras"
+          class="flex items-center gap-2 uppercase font-bold text-sky-500"
+        >
+          <p class="text-sm">{t('ribadeo.link')}</p>
+          <img src="/figueiras/link.svg" alt="Link" class="w-3" />
+          <img
+            src="/figueiras/condetraveler.webp"
+            alt="Conde Nast Traveler"
+            class="w-16"
+          />
+        </a>
+
+        <div
+          class="flex flex-col items-center md:flex-row md:items-start gap-3"
+        >
+          <button class="bg-sky-500 text-gray-50 text-sm px-5 py-2 rounded-full"
+            >{t('ribadeo.btn')}</button
+          >
+
+          <img
+            src="/figueiras/asturiasparaiso.webp"
+            alt="Asturias Paraíso Natural"
+            class="w-24"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

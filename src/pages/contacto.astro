@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import RentForm from "../components/RentForm.astro";
+import Footer from "../components/Footer.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="Casas das Figueiras">
+    <div class="block sm:flex flex-col justify-center items-center">
+        <section class="pt-10 w-full">
+            <RentForm />
+        </section>
+
+        <section
+            class="contacto lg:w-4/5 flex flex-col md:flex-row gap-7 w-screen items-center justify-center"
+        >
+            <div class="flex w-full flex-wrap md:flex-nowrap justify-center">
+                <div class="w-full md:w-2/6 p-4">
+                    <h1 class="text-lg font-medium text-sky-700 mb-6">
+                        CONTACTO
+                    </h1>
+                    <p class="text-sm mb-6">
+                        Puede contactar con nosotros por teléfono, email o a
+                        través de nuestro formulario.<br /><br />
+
+                        <span class="text-lg">Casas Das Figueiras</span><br
+                        /><br />
+
+                        España
+                    </p>
+                    <p>
+                        <a href="mailto:reservas@casasdasfigueiras.es"
+                            ><i class="fas fa-envelope text-blue-300"></i> reservas@casasdasfigueiras.es</a
+                        ><br />
+                        <a href=""
+                            ><i class="fas fa-phone text-blue-300"></i> +34 915754659</a
+                        ><br />
+                        <a href=""
+                            ><i class="fas fa-phone text-blue-300"></i> 639610420</a
+                        >
+                    </p>
+                </div>
+                <div class="w-full md:w-2/4 p-4">
+                    <h2 class="text-xl font-medium text-sky-700 mb-6">
+                        Formulario de contacto
+                    </h2>
+                    <script
+                        charset="utf-8"
+                        type="text/javascript"
+                        src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+                    <script>
+                        hbspt.forms.create({
+                            region: "eu1",
+                            portalId: "27159505",
+                            formId: "8adc1b31-7980-4a3a-ba88-9613cbfbab51",
+                        });
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <footer class="pt-12">
+            <Footer />
+        </footer>
+    </div>
+</Layout>

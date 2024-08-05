@@ -1,0 +1,37 @@
+---
+import { paymentMethods } from '../data/paymethods';
+---
+
+<div
+  class="text-[11px] flex flex-col gap-4 justify-center items-center text-gray-500"
+>
+  <hr class="border w-screen md:w-[74rem] bg-slate-400" />
+
+  <ul class="flex flex-wrap gap-4 items-center justify-center lg:pl-32">
+    <li>Inicio</li>
+    <li>Casa Jovellanos</li>
+    <li>Casa Alameda 23</li>
+    <li>Casa Alameda 33</li>
+    <li>Nosotros</li>
+    <li>Aviso Legal</li>
+    <li>Normas</li>
+    <li>Contacto</li>
+    <li>
+      <div class="flex gap-1">
+        {
+          paymentMethods.map((payMethod) => {
+            const { img, method } = payMethod;
+            return <img src={img} alt={method} class="w-12 object-contain" />;
+          })
+        }
+      </div>
+    </li>
+  </ul>
+
+  <div class="flex gap-5">
+    <p>© <span class="font-bold">casasdasfigueiras.es</span></p>
+    <p>Todos los derechos reservados</p>
+  </div>
+
+  <p class="pb-4">Desarrollo Web Sitelicon Web Projects</p>
+</div>

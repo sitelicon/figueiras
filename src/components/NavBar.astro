@@ -1,0 +1,93 @@
+---
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+} from "astro-navbar";
+
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "../i18n/utils";
+import type { LangsI, NavBarItems } from "../data/types";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const langs: LangsI[] = [
+  {
+    lang: "Español",
+    route: "/",
+  },
+  {
+    lang: "English",
+    route: "/en",
+  },
+  {
+    lang: "Deustch",
+    route: "/de",
+  },
+];
+
+const navBarItems: NavBarItems[] = [
+  {
+    route: "/",
+    title: t("nav.home"),
+  },
+  {
+    route: "/jovellanos",
+    title: t("nav.jovellanos"),
+  },
+  {
+    route: "/alameda23",
+    title: t("nav.alameda23"),
+  },
+  {
+    route: "/alameda33",
+    title: t("nav.alameda33"),
+  },
+  {
+    route: "/contacto",
+    title: t("nav.contact"),
+  },
+];
+---
+
+<header class="lg:flex lg:w-4/5 w-screen sm:p-5 p-2 gap-5 mx-auto">
+  <Astronav>
+    <div class="flex w-full1 justify-between">
+      <a>
+        <img
+          src="/figueiras/logofigueiras.svg"
+          alt="Logo"
+          width="200"
+          height="100"
+          class="w-40"
+        />
+      </a>
+      <div class="block lg:hidden">
+        <MenuIcon class="w-6 h-6 mt-6 text-gray-800" />
+      </div>
+    </div>
+    <MenuItems class="hidden lg:flex lg:items-center lg:ml-auto">
+      <ul class="flex flex-col lg:flex-row lg:gap-5 lg:w-auto w-full">
+        {
+          navBarItems.map((item) => (
+            <li class="my-1 lg:my-0">
+              <a
+                href={translatePath(item.route)}
+                class="bg-gray-100 px-2 py-1 uppercase text-sky-700 font-semibold text-sm"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>

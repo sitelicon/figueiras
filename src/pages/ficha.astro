@@ -1,0 +1,414 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import RentForm from "../components/RentForm.astro";
+import Footer from "../components/Footer.astro";
+import CalendarioCasa from "../components/ficha/CalendarioCasa.astro";
+import CalendarioApartamento from "../components/ficha/CalendarioApartamento.astro";
+import Caracteristicas from "../components/ficha/Caracteristicas.astro";
+import Certificaciones from "../components/ficha/Certificaciones.astro";
+import Localizacion from "../components/ficha/Localizacion.astro";
+import Encontranos from "../components/ficha/Encontranos.astro";
+import Carousel from "../components/ficha/Carousel.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="Casas das Figueiras">
+    <div class="block sm:flex flex-col justify-center items-center">
+        <section class="pt-10 w-full">
+            <RentForm />
+        </section>
+
+        <section class="lg:w-4/5 gap-7 w-screen">
+            <div class="w-full">
+                <h1 class="text-center text-xl text-sky-700">
+                    Casa Rural en Asturias
+                </h1>
+                <h2 class="text-center lg:text-4xl text-sky-700 font-bold">
+                    CASA/APARTAMENTO JOVELLANOS
+                </h2>
+            </div>
+
+            <Carousel />
+
+            <CalendarioCasa />
+
+            <CalendarioApartamento />
+
+            <div class="w-full">
+                <h2 class="text-center lg:text-4xl text-sky-700 font-bold">
+                    Alquiler vacacional en Asturias
+                </h2>
+
+                <div class="container mx-auto p-4">
+                    <div class="flex flex-wrap">
+                        <div class="w-full md:w-[70%] p-2">
+                            <!-- Contenido de la primera columna -->
+                            <h3
+                                class="my-5 text-xl text-sky-700 font-bold border-b-2 leading-8"
+                            >
+                                Descripción del alojamiento rural
+                            </h3>
+
+                            <table class="tablademo">
+                                <thead>
+                                    <tr>
+                                        <th>Precio x noche</th>
+                                        <th>Tem baja</th>
+                                        <th>Temp media</th>
+                                        <th>Temp alta</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;V-D - Min 3 noches<br /></td>
+                                        <td>Min 3 noches</td>
+                                        <td>&nbsp;Min 6 noches</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;Cap 3 pers</td>
+                                        <td>&nbsp;125€ - 90€<br /></td>
+                                        <td>125€</td>
+                                        <td>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cap 6 pers</td>
+                                        <td>165€ - 109€</td>
+                                        <td>109€</td>
+                                        <td>199€</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!--  -->
+                            <p class="pt-6 pr-10">
+                                &iexcl;Bienvenidos a nuestra casa rural en
+                                Asturias, ideal para unas vacaciones con tu
+                                perro! Ubicada en el centro de este encantador
+                                pueblo en la orilla de la R&iacute;a Eo-Ribadeo,
+                                ofrecemos la posibilidad de alquilarla como casa
+                                completa o como apartamento.<br /><br />La Casa
+                                Jovellanos tiene capacidad para 6
+                                hu&eacute;spedes en 4 c&oacute;modas
+                                habitaciones distribuidas en 2 plantas. Dos
+                                habitaciones dobles, una con dos camas
+                                individuales de 90 cm y otra con una cama de
+                                matrimonio de 150 cm, adem&aacute;s de dos
+                                habitaciones individuales con c&oacute;modas
+                                camas de 130 cm.<br /><br />Si prefieres el
+                                Apartamento Jovellanos, tiene capacidad para 3
+                                personas con una habitaci&oacute;n con cama de
+                                matrimonio de 150 cm, una habitaci&oacute;n
+                                individual de 130 cm y un ba&ntilde;o completo.<br
+                                /><br />Ambas opciones incluyen un sal&oacute;n
+                                con estufa de le&ntilde;a, para disfrutar de las
+                                tardes m&aacute;s acogedoras, y una cocina
+                                totalmente equipada para tus necesidades
+                                culinarias. Disfruta de un tranquilo patio de 20
+                                m&sup2; con un aseo, donde pasar&aacute;s
+                                agradables veladas. La vivienda vacacional es
+                                luminosa y est&aacute; equipada con todo lo
+                                necesario, proporcionando ropa de cama, toallas
+                                y un kit de bienvenida.<br /><br />Nuestra casa
+                                rural situada enfrente de Ribadeo es el lugar
+                                perfecto pasar unas vacaciones en familia y
+                                explorar la belleza y la cultura del pueblo.
+                                &iexcl;Esperamos que disfrutes de esta escapada
+                                rural en Asturias y que te sientas como en casa
+                                desde el primer momento! <br /><br /><br
+                                /><strong
+                                    >Caracter&iacute;sticas Casa Jovellanos:</strong
+                                ><br />N&uacute;mero de registro
+                                tur&iacute;stico: VV-1602-AS<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;4 dormitorios:<br
+                                />1 dormitorio doble con cama de matrimonio de
+                                150 cm.<br />1 dormitorio doble con dos camas de
+                                90 cm.<br />2 dormitorios individuales con cama
+                                de 130 cm.<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;2 ba&ntilde;os
+                                completos con ducha, uno en cada planta de
+                                habitaciones<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;1 aseo en el
+                                patio.<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;Sal&oacute;n con
+                                capacidad para 6 personas con televisi&oacute;n
+                                y estufa de le&ntilde;a<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;Comedor con
+                                capacidad para 6 personas<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;Amplio patio de
+                                20 m2 con mesa para 6 personas<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;Cocina
+                                completamente equipada con todo lo necesario
+                                para cocinar y con lavavajillas, lavadora,
+                                vitrocer&aacute;mica, microondas, horno,
+                                tostador y cafetera Tassimo.<br /><br /><strong
+                                    >Servicios</strong
+                                ><br />&nbsp;&nbsp; &nbsp;&bull;&nbsp;&nbsp;
+                                &nbsp;Wifi: incluido<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp;
+                                &nbsp;Calefacci&oacute;n: incluido<br
+                                />&nbsp;&nbsp; &nbsp;&bull;&nbsp;&nbsp;
+                                &nbsp;Limpieza final: incluido<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;Ropa de cama:
+                                incluida<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;Toallas: incluida<br
+                                />&nbsp;&nbsp; &nbsp;&bull;&nbsp;&nbsp;
+                                &nbsp;Cuna: bajo petici&oacute;n y sujeto a
+                                disponibilidad.<br /><br /><strong
+                                    >Forma de pago:</strong
+                                ><br />A trav&eacute;s de nuestro sitio web
+                                www.casasdasfigueiras.es, puedes realizar el
+                                pago de la siguiente manera:<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;El 10% al hacer
+                                la reserva<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;El 20% antes de
+                                los 14 d&iacute;as de comenzar el alquiler
+                                vacacional<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;El 70% restante
+                                se abona el d&iacute;a antes del alquiler
+                                vacacional<br />Dep&oacute;sito de fianza de
+                                200&euro; por reserva que se devolver&aacute; a
+                                la salida a la salida, por el mismo medio que se
+                                abon&oacute;.<br />Todos nuestros precios
+                                incluyen el IVA.<br /><br /><strong
+                                    >Pol&iacute;tica de cancelaci&oacute;n:</strong
+                                ><br />&nbsp;&nbsp; &nbsp;&bull;&nbsp;&nbsp;
+                                &nbsp;Hasta 14 d&iacute;as antes del comienzo
+                                del alquiler vacacional, la reserva es 100%
+                                reembolsable.<br />&nbsp;&nbsp;
+                                &nbsp;&bull;&nbsp;&nbsp; &nbsp;A partir de los
+                                14 d&iacute;as antes del comienzo del alquiler
+                                vacacional, no estar&aacute; permitida la
+                                cancelaci&oacute;n de la reserva.<br />Por
+                                favor, ten en cuenta esta pol&iacute;tica al
+                                realizar tu reserva. Si tienes alguna pregunta o
+                                necesitas m&aacute;s informaci&oacute;n, no
+                                dudes en ponerte en contacto con nosotros.
+                                Estamos aqu&iacute; para ayudarte.<br /><br
+                                /><strong>Normas de la casa:</strong>
+                            </p>
+                            <p>
+                                1.&nbsp;&nbsp; &nbsp;Horario de llegada y
+                                salida: El horario de llegada a la casa
+                                vacacional es a partir de las 18:00 horas,
+                                mientras que el horario de salida es antes de
+                                las 11:00 horas. Estos horarios nos permiten
+                                preparar adecuadamente la casa para su llegada y
+                                garantizar que est&eacute; lista para los
+                                pr&oacute;ximos hu&eacute;spedes.<br />Si deseas
+                                llegar o salir en horarios diferentes a los
+                                establecidos, te pedimos que nos consulte con
+                                anticipaci&oacute;n. Haremos todo lo posible
+                                para acomodar tu solicitud siempre y cuando sea
+                                factible y no interfiera con la disponibilidad
+                                de la casa.<br />2.&nbsp;&nbsp; &nbsp;Respeto al
+                                cuidado de la propiedad: Le pedimos que trate la
+                                casa vacacional con respeto y cuidado.
+                                Aseg&uacute;rese de no causar da&ntilde;os a los
+                                muebles, electrodom&eacute;sticos, paredes o
+                                cualquier otra parte de la propiedad. Si algo se
+                                rompe o se da&ntilde;a, le pedimos que nos lo
+                                comunique de inmediato.<br />3. &nbsp;&nbsp;
+                                &nbsp;El uso debido de las claraboyas puede
+                                contribuir a mantener un ambiente agradable y
+                                seguro en tu casa, esto implica cerrarlas al
+                                salir de la casa y durante los per&iacute;odos
+                                de lluvia. Esto es MUY IMPORTANTE, dejarlas
+                                abiertas puede ocasionar inundaciones en la casa
+                                en caso de lluvia.<br />4.&nbsp;&nbsp; &nbsp;Por
+                                favor, ten en cuenta que est&aacute;
+                                estrictamente prohibido mover los muebles de la
+                                casa vacacional. Si necesitas realizar
+                                alg&uacute;n tipo de ajuste o cambio en la
+                                disposici&oacute;n de los muebles, por favor,
+                                cons&uacute;ltanos con anterioridad. Estaremos
+                                encantados de ayudarte y buscar una
+                                soluci&oacute;n adecuada.<br />5.&nbsp;&nbsp;
+                                &nbsp;N&uacute;mero de hu&eacute;spedes: La
+                                capacidad m&aacute;xima de la casa est&aacute;
+                                establecida para un n&uacute;mero determinado de
+                                personas, y se diferencia entre adultos y
+                                ni&ntilde;os. Por favor, no excedas este
+                                l&iacute;mite y condici&oacute;n sin previo
+                                aviso y autorizaci&oacute;n.<br />6.&nbsp;&nbsp;
+                                &nbsp;La vivienda cuenta con conexi&oacute;n
+                                WiFi y una SmartTV para tu comodidad.&nbsp; Por
+                                favor, abstente de realizar compras en
+                                l&iacute;nea, incluyendo pel&iacute;culas u
+                                otros contenidos, ya que los costos adicionales
+                                correr&aacute;n por tu cuenta.<br />Utiliza la
+                                conexi&oacute;n WiFi de manera responsable y
+                                evita visitar sitios ilegales o realizar
+                                descargas ilegales. Estas actividades pueden
+                                tener consecuencias legales, y el operador de la
+                                red podr&iacute;a tomar acciones legales en caso
+                                de detectar un mal uso.<br />7.&nbsp;&nbsp;
+                                &nbsp;No se permiten fiestas o eventos: Por
+                                respeto a los vecinos y a la tranquilidad del
+                                lugar, no se permiten fiestas o eventos. Si
+                                deseas celebrar alg&uacute;n evento, por favor,
+                                cons&uacute;ltenos con anticipaci&oacute;n.<br
+                                />8.&nbsp;&nbsp; &nbsp;No se permite fumar en el
+                                interior: la casa vacacional es un espacio libre
+                                de humo. Te pedimos que no fumes en el interior
+                                de la casa. Si deseas fumar, por favor, utilice
+                                las &aacute;reas exteriores y aseg&uacute;rate
+                                de desechar adecuadamente las colillas.<br
+                                />9.&nbsp;&nbsp; &nbsp;Mantenimiento de la
+                                limpieza: agradecemos que secmantenga la casa en
+                                buen estado de limpieza durante su estancia. Te
+                                proporcionaremos los utensilios necesarios para
+                                mantener la casa ordenada. Al final de su
+                                estancia, te pedimos que dejes la casa en
+                                condiciones razonables de limpieza.<br
+                                />10.&nbsp;&nbsp; &nbsp;Ruido y horarios de
+                                descanso: por favor, respeta los horarios de
+                                descanso y evita hacer ruido excesivo,
+                                especialmente durante las horas de la noche.
+                                Recuerda que hay otros hu&eacute;spedes y
+                                vecinos que tambi&eacute;n desean disfrutar de
+                                un entorno tranquilo.<br />11.&nbsp;&nbsp;
+                                &nbsp;Mascotas: si deseas traer una mascota, por
+                                favor, cons&uacute;ltenoslo antes de hacerlo. En
+                                caso de que se permita, te pedimos que traiga
+                                consigo sus propios utensilios y accesorios
+                                necesarios para su cuidado. Queda completamente
+                                prohibido que su mascota se suba a los
+                                sof&aacute;s, camas, etc. de la casa vacacional.<br
+                                />12.&nbsp;&nbsp; &nbsp;Seguridad: por tu
+                                seguridad y la de sus pertenencias, te
+                                recomendamos que cierre con llave las puertas y
+                                ventanas cuando salgas de la casa. No nos
+                                hacemos responsables de la p&eacute;rdida de
+                                objetos de valor o dinero.<br />13.&nbsp;&nbsp;
+                                &nbsp;D&iacute;a de salida: a la hora
+                                establecida, se deber&aacute; abandonar la casa
+                                en las mismas condiciones en las que se
+                                encontr&oacute; al inicio de tu estancia. Esto
+                                implica asegurarte de que no haya basura o
+                                residuos dentro de la casa y de que los
+                                utensilios utilizados est&eacute;n limpios y en
+                                su lugar correspondiente. Aseg&uacute;rate de
+                                vaciar la despensa y la nevera de cualquier
+                                alimento o bebida que hayas tra&iacute;do. No
+                                debes dejarse ning&uacute;n art&iacute;culo
+                                perecedero o abierto en estos espacios.
+                                Adem&aacute;s de la limpieza, verifique que no
+                                haya da&ntilde;os significativos en la casa. Si
+                                se produjo alg&uacute;n desperfecto durante tu
+                                estancia, te pedimos que nos informes al momento
+                                de la entrega de las llaves.<br
+                                />14.&nbsp;&nbsp; &nbsp;Cumplimiento de las
+                                normas: el incumplimiento grave de las normas
+                                establecidas puede resultar en la
+                                cancelaci&oacute;n inmediata de tu reserva y la
+                                solicitud de abandono de la casa vacacional sin
+                                derecho a reembolso.<br /><br />Te agradecemos
+                                tu comprensi&oacute;n y colaboraci&oacute;n en
+                                el cumplimiento de estas normas. Esperamos que
+                                disfrute de tu estancia en nuestra casa
+                                vacacional. Si tiene alguna pregunta o necesita
+                                alguna informaci&oacute;n adicional, estaremos
+                                encantados de ayudarte.
+                            </p>
+                            <p>
+                                <br /><strong
+                                    >MEDIDAS FRENTE A COVID-19<br /></strong
+                                >
+                            </p>
+                            <p>
+                                Nuestro compromiso con la seguridad de nuestros
+                                hu&eacute;spedes es primordial en nuestras
+                                viviendas vacacionales. Hemos implementado
+                                rigurosas medidas de higiene y
+                                desinfecci&oacute;n para abordar la
+                                situaci&oacute;n de la COVID-19:Limpieza y
+                                desinfecci&oacute;n: Utilizamos productos
+                                recomendados por el Ministerio de Sanidad para
+                                limpiar y desinfectar todo el alojamiento.Ropa
+                                de cama y toallas: Todas las s&aacute;banas,
+                                toallas, colchas y mantas se lavan a una
+                                temperatura superior a 60&ordm;C.Textiles
+                                tratados: Todos los textiles del alojamiento,
+                                como cortinas, sillones, sof&aacute;s, almohadas
+                                y colchones, se tratan con bactericidas
+                                especiales.Desinfecci&oacute;n de superficies:
+                                Todos los muebles, pomos, tiradores, manillas,
+                                mandos, cuadros, cables, televisores, perchas y
+                                otras superficies de contacto han sido
+                                desinfectados minuciosamente.Desinfecci&oacute;n
+                                de ba&ntilde;os: Los ba&ntilde;os se someten a
+                                un proceso exhaustivo de
+                                desinfecci&oacute;n.Soluci&oacute;n
+                                hidroalcoh&oacute;lica: Encontrar&aacute; un
+                                bote de soluci&oacute;n hidroalcoh&oacute;lica a
+                                la entrada del alojamiento para su uso durante
+                                su estancia.Eliminaci&oacute;n segura de
+                                mascarillas y pa&ntilde;uelos: Todos los
+                                ba&ntilde;os cuentan con papeleras con tapa y
+                                accionamiento a pedal para desechar mascarillas,
+                                pa&ntilde;uelos, etc.Ventilaci&oacute;n: Todas
+                                las estancias se han ventilado
+                                adecuadamente.Minimizaci&oacute;n de la
+                                decoraci&oacute;n: Hemos retirado alfombras,
+                                almohadas decorativas y papeleras de la
+                                habitaci&oacute;n para evitar posibles puntos de
+                                contagio.Informaci&oacute;n tur&iacute;stica:
+                                Como medida preventiva, no entregamos folletos
+                                tur&iacute;sticos en formato f&iacute;sico. La
+                                informaci&oacute;n tur&iacute;stica de la
+                                comarca se proporcionar&aacute; por correo
+                                electr&oacute;nico. Si necesita asistencia
+                                adicional, no dude en comunic&aacute;rnoslo;
+                                estamos aqu&iacute; para ayudarle.Su seguridad y
+                                bienestar son nuestra principal
+                                preocupaci&oacute;n. Esperamos que disfrute de
+                                una estancia tranquila y segura con nosotros.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-[30%] p-2">
+                            <!-- Contenido de la segunda columna -->
+                            <Caracteristicas />
+                            <Localizacion />
+                            <p class="my-2">
+                                Casa/Apartamento Jovellanos<br />
+
+                                Casas Das Figueiras<br />
+
+                                Situada en el centro de Figueiras.
+                            </p>
+                            <Encontranos />
+
+                            <Certificaciones />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>
+
+<footer class="pt-12">
+    <Footer />
+</footer>
+
+<style>
+    .tablademo {
+        border: 1px solid #c0c0c0;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    .tablademo th {
+        border: 1px solid #c0c0c0;
+        padding: 5px;
+        background: #f0f0f0;
+    }
+    .tablademo td {
+        border: 1px solid #c0c0c0;
+        padding: 5px;
+        text-align: center;
+    }
+</style>

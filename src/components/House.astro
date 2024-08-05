@@ -1,0 +1,58 @@
+---
+import { homeHouses } from "../data/houses";
+---
+
+<div class="flex flex-col gap-8 lg:gap-24">
+  {
+    homeHouses.map((house) => {
+      return (
+        <div>
+          <h3 class="text-center text-2xl md:text-4xl text-sky-700 uppercase font-bold">
+            {house.title}
+          </h3>
+          <div class="relative pt-8">
+            <img
+              src={house.backgroundPc}
+              alt=""
+              class="hidden md:block w-screen h-screen"
+            />
+
+            <div class="md:hidden w-full">
+              <img
+                src={house.backgroundMobile}
+                alt=""
+                class="w-screen h-full"
+              />
+            </div>
+
+            <div class="absolute inset-0 flex justify-center items-center">
+              <div class="w-3/4 lg:w-1/4 textofondo lg:p-6 min-w-72 max-w-96">
+                <div class="flex flex-col gap-4 items-start p-5 lg:p-0">
+                  <h3 class="text-2xl uppercase text-white">
+                    Conoce <span class="font-bold">la casa</span>
+                  </h3>
+                  <p class="text-white">{house.description}</p>
+                  <p class="text-white">{house.registerNumber}</p>
+                  <button class="text-white border-white border rounded-3xl p-4">
+                    Ver {house.title}
+                  </button>
+                </div>
+                <img
+                  src={house.bookingImg}
+                  alt=""
+                  class="w-full lg:w-96 pt-4"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>
+
+<style>
+  .textofondo {
+    background-color: rgba(41, 115, 165, 0.8);
+  }
+</style>

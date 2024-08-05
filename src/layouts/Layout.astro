@@ -1,0 +1,36 @@
+---
+import NavBar from "../components/NavBar.astro";
+
+interface Props {
+  title: string;
+}
+
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/figueiras/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="/figueiras/fonts/fonts.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>{title}</title>
+  </head>
+  <body
+    class="sm:flex flex-col font-figueiras tracking-wide h-full w-full overflow-x-hidden"
+  >
+    <NavBar />
+    <slot />
+  </body>
+</html>
