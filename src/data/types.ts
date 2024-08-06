@@ -15,6 +15,11 @@ export interface Brands {
   src: string;
 }
 
+export interface CarouselHome {
+  alt: string;
+  src: string;
+}
+
 export interface House {
   id: number;
   title: string;

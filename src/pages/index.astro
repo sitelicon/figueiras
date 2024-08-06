@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import RentForm from "../components/RentForm.astro";
+import CarouselHome from "../components/CarouselHome.astro";
 import Brands from "../components/Brands.astro";
 import RiaEoRibadeo from "../components/RiaEoRibadeo.astro";
 import House from "../components/House.astro";
@@ -15,22 +16,9 @@ const t = useTranslations(lang);
 ---
 
 <Layout title="Casas das Figueiras">
-  <header class="relative">
-    <img
-      src="/figueiras/mainslider/banner1.png"
-      alt=""
-      class="h-96 md:h-auto w-full"
-    />
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="text-center text-gray-50 uppercase lg:mb-24">
-        <p class="text-2xl lg:text-4xl">{t("header.welcome")}</p>
-        <h1 class="text-3xl lg:text-5xl font-bold">
-          {t("header.title")}
-        </h1>
-        <p class="text-xl lg:text-2xl pt-2">{t("header.subtitle")}</p>
-      </div>
-    </div>
-  </header>
+  <div class="block w-full">
+    <CarouselHome />
+  </div>
 
   <section class="pt-10 w-full">
     <RentForm />
