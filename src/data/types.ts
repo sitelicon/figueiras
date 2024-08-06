@@ -60,8 +60,3 @@ export interface Payments {
   method: PaymentMethods;
   img: string;
 }
-
-export interface MainSliders {
-  id: number;
-  img: string;
-}

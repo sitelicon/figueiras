@@ -18,4 +18,19 @@ export const lastNews: News[] = [
     img: '/figueiras/news/ribadeo.jpg',
     title: 'RIBADEO - Lo que la ría esconde',
   },
+  {
+    id: 4,
+    img: '/figueiras/news/ribadeo.jpg',
+    title: 'RIBADEO - Lo que la ría esconde',
+  },
+  {
+    id: 5,
+    img: '/figueiras/news/ribadeo.jpg',
+    title: 'RIBADEO - Lo que la ría esconde',
+  },
+  {
+    id: 6,
+    img: '/figueiras/news/ribadeo.jpg',
+    title: 'RIBADEO - Lo que la ría esconde',
+  },
 ];

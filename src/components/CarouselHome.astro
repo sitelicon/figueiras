@@ -18,6 +18,7 @@ import { carouselhome } from "../data/carouselhome.js";
                 </p>
             </div>
         </div>
+        <div id="CarouselHome">
         <div class="swiper">
             <!-- Wrapper adicional requerido -->
             <div class="swiper-wrapper">
@@ -39,6 +40,7 @@ import { carouselhome } from "../data/carouselhome.js";
             <div class="swiper-button-next"></div>
         </div>
     </div>
+</div>
 </header>
 
 <script>
@@ -47,12 +49,17 @@ import { carouselhome } from "../data/carouselhome.js";
     import "swiper/css";
     // Módulo Navigation de Swiper y estilos
     import { Navigation } from "swiper/modules";
+    import { Autoplay } from "swiper/modules";
     import "swiper/css/navigation";
 
     // Configurar Swiper
-    const swiper = new Swiper(".swiper", {
-        modules: [Navigation], // definir los módulos a usar
+    const swiper = new Swiper("#CarouselHome .swiper", {
+        modules: [Navigation, Autoplay], // definir los módulos a usar
         loop: true, // definir si los slides estarán en bucle
+        autoplay: {
+      delay: 3000, // Tiempo entre cambios de diapositivas en milisegundos
+      disableOnInteraction: false, // Mantiene el autoplay incluso si el usuario interactúa con el swiper
+    },
         slidesPerView: 1, // agregar número de slides para la pantalla
         spaceBetween: 40, // separación entre slides en px
         navigation: {
