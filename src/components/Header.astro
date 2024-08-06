@@ -1,0 +1,83 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { mainSliders } from '../data/mainSliders';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="swiper mainSwiper">
+  <div class="swiper-wrapper">
+    {
+      mainSliders.map((slide) => {
+        const { img } = slide;
+
+        return (
+          <div class="swiper-slide shadow-xl">
+            <img src={img} alt="Image" class="h-96 md:h-auto w-screen" />
+          </div>
+        );
+      })
+    }
+  </div>
+  <div class="absolute inset-0 flex items-center justify-center z-10">
+    <div class="text-center text-gray-50 uppercase lg:mb-24">
+      <p class="text-2xl lg:text-4xl">{t('header.welcome')}</p>
+      <h1 class="text-3xl lg:text-5xl font-bold">
+        {t('header.title')}
+      </h1>
+      <p class="text-xl lg:text-2xl pt-2">{t('header.subtitle')}</p>
+    </div>
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<script>
+  // Core de Swiper y estilos
+  import Swiper from 'swiper';
+  import 'swiper/css';
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation } from 'swiper/modules';
+  import 'swiper/css/navigation';
+  import { Autoplay } from 'swiper/modules';
+
+  // Configurar Swiper
+  const swiper = new Swiper('.mainSwiper', {
+    modules: [Navigation, Autoplay], // definir los módulos a usar
+    loop: true, // definir si los slides estarán en bucle
+    speed: 1000, // velocidad de transición en ms
+    slidesPerView: 1, // inicializa con 1 slide por vista
+    spaceBetween: 40, // separación entre slides en px
+    navigation: {
+      // definir botones next y prev para el módulo Navigation
+      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next',
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: true,
+    },
+  });
+</script>
+
+<style>
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: #16b3e0;
+    width: 60px;
+    height: 60px;
+    border-radius: 31px;
+    color: #fff;
+    font-size: 20px !important;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 20px;
+  }
+</style>
