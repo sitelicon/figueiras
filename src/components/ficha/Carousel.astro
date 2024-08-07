@@ -1,68 +1,68 @@
 <!-- Contenedor principal de Swiper -->
 <div class="justify-center items-center mx-auto">
-    <div class="my-4 w-full">
-        <div class="swiper">
-            <!-- Wrapper adicional requerido -->
-            <div class="swiper-wrapper">
-                <!-- Los slides -->
-                <div class="swiper-slide">
-                    <img src="1.jpg" alt="" class="w-full" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="1.jpg" alt="" class="w-full" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="1.jpg" alt="" class="w-full" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="1.jpg" alt="" class="w-full" />
-                </div>
-            </div>
-            <!-- Botones de navegación -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+  <div class="my-4 w-full">
+    <div class="swiper">
+      <!-- Wrapper adicional requerido -->
+      <div class="swiper-wrapper">
+        <!-- Los slides -->
+        <div class="swiper-slide">
+          <img src="/figueiras/1.jpg" alt="" class="w-full" />
         </div>
+        <div class="swiper-slide">
+          <img src="/figueiras/1.jpg" alt="" class="w-full" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/figueiras/1.jpg" alt="" class="w-full" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/figueiras/1.jpg" alt="" class="w-full" />
+        </div>
+      </div>
+      <!-- Botones de navegación -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
+  </div>
 </div>
 
 <script>
-    // Core de Swiper y estilos
-    import Swiper from "swiper";
-    import "swiper/css";
-    // Módulo Navigation de Swiper y estilos
-    import { Navigation } from "swiper/modules";
-    import "swiper/css/navigation";
+  // Core de Swiper y estilos
+  import Swiper from 'swiper';
+  import 'swiper/css';
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation } from 'swiper/modules';
+  import 'swiper/css/navigation';
 
-    // Configurar Swiper
-    const swiper = new Swiper(".swiper", {
-        modules: [Navigation], // definir los módulos a usar
-        loop: true, // definir si los slides estarán en bucle
-        slidesPerView: 1, // agregar número de slides para la pantalla
-        spaceBetween: 40, // separación entre slides en px
-        navigation: {
-            // definir botones next y prev para el módulo Navigation
-            prevEl: ".swiper-button-prev",
-            nextEl: ".swiper-button-next",
-        },
-    });
+  // Configurar Swiper
+  const swiper = new Swiper('.swiper', {
+    modules: [Navigation], // definir los módulos a usar
+    loop: true, // definir si los slides estarán en bucle
+    slidesPerView: 1, // agregar número de slides para la pantalla
+    spaceBetween: 40, // separación entre slides en px
+    navigation: {
+      // definir botones next y prev para el módulo Navigation
+      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next',
+    },
+  });
 </script>
 
 <style>
-    .swiper-slide {
-    }
-    .swiper-slide img {
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-        background-color: #16b3e0;
-        width: 60px;
-        height: 60px;
-        border-radius: 31px;
-        color: #fff;
-        font-size: 20px !important;
-    }
-    .swiper-button-prev:after,
-    .swiper-button-next:after {
-        font-size: 20px;
-    }
+  .swiper-slide {
+  }
+  .swiper-slide img {
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: #16b3e0;
+    width: 60px;
+    height: 60px;
+    border-radius: 31px;
+    color: #fff;
+    font-size: 20px !important;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 20px;
+  }
 </style>

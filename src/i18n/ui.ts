@@ -32,6 +32,8 @@ export const ui = {
     'jovellanos.title02': 'Casa/Apartamento Jovellanos',
     'alameda23.title01': 'Casa Rural en Asturias',
     'alameda23.title02': 'Casa Alameda 23',
+    'alameda33.title01': 'Casa Rural en Asturias',
+    'alameda33.title02': 'Casa Alameda 33',
   },
   en: {
     'nav.home': '',
@@ -56,6 +58,8 @@ export const ui = {
     'jovellanos.title02': 'House/Apartment Jovellanos',
     'alameda23.title01': 'Rural house in Asturias',
     'alameda23.title02': 'House Alameda 23',
+    'alameda33.title01': 'Rural house in Asturias',
+    'alameda33.title02': 'House Alameda 33',
   },
   de: {
     'nav.home': '',
@@ -80,5 +84,7 @@ export const ui = {
     'jovellanos.title02': 'Haus/Wohnung Jovellanos',
     'alameda23.title01': 'Landhaus in Asturien',
     'alameda23.title02': 'Haus Alameda 23',
+    'alameda33.title01': 'Landhaus in Asturien',
+    'alameda33.title02': 'Haus Alameda 33',
   },
 } as const;
