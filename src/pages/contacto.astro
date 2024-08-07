@@ -8,7 +8,10 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title="Casas das Figueiras">
+<Layout
+    title="Casas das Figueiras"
+    meta="Alquiler casas vacacionales en Ribadeo, cerca de la playa, disfruta de la gastronomía de Asturias y Galicia."
+>
     <div class="block sm:flex flex-col justify-center items-center">
         <section class="pt-10 w-full">
             <RentForm />

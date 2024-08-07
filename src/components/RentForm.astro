@@ -1,3 +1,7 @@
+---
+//import Widgets from "./Widget.jsx";
+---
+
 <div class="flex flex-col gap-5">
   <h2 class="uppercase text-xl lg:text-4xl text-sky-700 font-bold text-center">
     Reservar <span class="font-normal">Casa das Figueiras</span>
@@ -5,16 +9,52 @@
 </div>
 
 <div class="w-full md:w-[1000px] mx-auto">
-  <div id="apartmentIframeAll">
-    <script
-      type="text/javascript"
-      src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
-    <script>
-      BookingToolIframe.initialize({
-        url: "https://login.smoobu.com/es/booking-tool/iframe/485990?apartmentGroups[]=1441395&apartmentGroups[]=1596016&apartmentGroups[]=1441391&apartmentGroups[]=1422470",
-        baseUrl: "https://login.smoobu.com",
-        target: "#apartmentIframeAll",
-      });
-    </script>
+  <!-- <Widgets client:load />-->
+  <div id="widget1" class="widget loading">
+    <!-- Contenido del widget -->
+    <div id="apartmentIframeAll">
+      <script
+        type="text/javascript"
+        src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"
+      ></script>
+      <script>
+        BookingToolIframe.initialize({
+          url: "https://login.smoobu.com/es/booking-tool/iframe/485990?apartmentGroups[]=1441395&apartmentGroups[]=1596016&apartmentGroups[]=1441391&apartmentGroups[]=1422470",
+          baseUrl: "https://login.smoobu.com",
+          target: "#apartmentIframeAll",
+        });
+      </script>
+    </div>
   </div>
 </div>
+<style>
+  .loading {
+    opacity: 0.5; /* Grisado */
+    pointer-events: none; /* Evita la interacción con el contenido mientras se carga */
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+  }
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const widgets = document.querySelectorAll(".widget");
+
+    widgets.forEach((widget) => {
+      // Simula una carga de contenido
+      setTimeout(() => {
+        widget.classList.remove("loading");
+        // Aquí agregarías la lógica real para cargar el contenido
+      }, 4000); // Cambia el tiempo según lo necesario
+    });
+  });
+</script>

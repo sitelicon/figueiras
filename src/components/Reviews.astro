@@ -1,5 +1,5 @@
 ---
-import { houseReviews } from '../data/reviews';
+import { houseReviews } from "../data/reviews";
 ---
 
 <div class="flex flex-col items-center justify-center gap-14">
@@ -11,7 +11,7 @@ import { houseReviews } from '../data/reviews';
 
   <div class="bg-gray-100 w-full">
     <div
-      class="container mx-auto lg:max-w-7xl flex flex-col md:flex-row gap-7 w-screen px-12 py-16"
+      class="container mx-auto lg:max-w-7xl flex flex-col md:flex-row gap-7 w-screen sm:px-12 px-4 py-3 sm:py-16"
     >
       <!-- Contenedor principal de Swiper -->
       <div class="my-4 w-full" id="swiper2">
@@ -34,7 +34,7 @@ import { houseReviews } from '../data/reviews';
                           </h4>
                           <p class="font-bold text-left">{title}</p>
                         </div>
-                        <p class="text-left text-gray-600 text-[0.95rem]">
+                        <p class="text-left text-gray-600 text-[0.95rem] h-[220px]">
                           {description}
                         </p>
                       </div>
@@ -67,22 +67,22 @@ import { houseReviews } from '../data/reviews';
 
   <script>
     // Core de Swiper y estilos
-    import Swiper from 'swiper';
-    import 'swiper/css';
+    import Swiper from "swiper";
+    import "swiper/css";
     // Módulo Navigation de Swiper y estilos
-    import { Navigation } from 'swiper/modules';
-    import 'swiper/css/navigation';
+    import { Navigation } from "swiper/modules";
+    import "swiper/css/navigation";
 
     // Configurar Swiper
-    const swiper = new Swiper('#swiper2 .swiper', {
+    const swiper = new Swiper("#swiper2 .swiper", {
       modules: [Navigation], // definir los módulos a usar
       loop: true, // definir si los slides estarán en bucle
       slidesPerView: 1, // inicializa con 1 slide por vista
       spaceBetween: 40, // separación entre slides en px
       navigation: {
         // definir botones next y prev para el módulo Navigation
-        prevEl: '.swiper-button-prev',
-        nextEl: '.swiper-button-next',
+        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
       },
       breakpoints: {
         640: {
