@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const houses = [
+  {
+    id: 1,
+    name: 'jovellanos',
+  },
+  {
+    id: 2,
+    name: 'alameda23',
+  },
+  {
+    id: 3,
+    name: 'alameda33',
+  },
+];
+
+export function getStaticPaths() {
+  return [
+    { params: { house: 'jovellanos' } },
+    { params: { house: 'alameda23' } },
+    { params: { house: 'alameda33' } },
+  ];
+}
+
+const { house } = Astro.params;
+
+const selectedHouse = houses.find((h) => h.name === house);
+---
+
+<Layout title={selectedHouse?.name || 'Casas das Figueiras'}>
+  {
+    selectedHouse && (
+      <div>
+        {t(`${selectedHouse.name}.title01` as any)}
+        <br />
+        {t(`${selectedHouse.name}.title02` as any)}
+      </div>
+    )
+  }
+</Layout>
