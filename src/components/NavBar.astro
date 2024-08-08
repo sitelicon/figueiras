@@ -14,26 +14,31 @@ const translatedPath = useTranslatedPath(lang);
 
 const navBarItems: NavBarItems[] = [
   {
-    route: `${translatedPath('')}`,
+    route: '',
     title: t('nav.home'),
   },
   {
-    route: `${translatedPath('jovellanos')}`,
+    route: 'jovellanos',
     title: t('nav.jovellanos'),
   },
   {
-    route: `${translatedPath('alameda23')}`,
+    route: 'alameda23',
     title: t('nav.alameda23'),
   },
   {
-    route: `${translatedPath('alameda33')}`,
+    route: 'alameda33',
     title: t('nav.alameda33'),
   },
   {
-    route: `${translatedPath('contacto')}`,
+    route: 'contacto',
     title: t('nav.contact'),
   },
 ];
+
+const currentUrl = Astro.url.pathname;
+const route = navBarItems.find(
+  (item) => translatedPath(item.route) === currentUrl
+);
 ---
 
 <header class="lg:flex lg:w-4/5 w-screen sm:p-5 p-2 gap-5 mx-auto relative">
@@ -61,9 +66,9 @@ const navBarItems: NavBarItems[] = [
             Object.entries(languages).map(([lang, label]) => (
               <li>
                 {lang === 'es' ? (
-                  <a href={`/figueiras/`}>{label}</a>
+                  <a href={`/figueiras/${route?.route}`}>{label}</a>
                 ) : (
-                  <a href={`/figueiras/${lang}/`}>{label}</a>
+                  <a href={`/figueiras/${lang}/${route?.route}`}>{label}</a>
                 )}
               </li>
             ))
@@ -75,7 +80,7 @@ const navBarItems: NavBarItems[] = [
           navBarItems.map((item) => (
             <li class="my-1 lg:my-0">
               <a
-                href={item.route}
+                href={translatedPath(item.route)}
                 class="bg-gray-100 px-2 py-1 uppercase text-sky-700 font-semibold text-sm hover:bg-gray-200 transition-colors durantion-300"
               >
                 {item.title}
