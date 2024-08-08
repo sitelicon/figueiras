@@ -8,7 +8,7 @@ import Widgets from './Widget.jsx';
   </h2>
 </div>
 
-<div class="w-full md:w-[1000px] mx-auto h-40">
+<div class="w-full md:w-[1000px] mx-auto">
   <!-- <Widgets client:load />-->
   <div id="widget1" class="widget loading">
     <!-- Contenido del widget -->
@@ -47,3 +47,15 @@ import Widgets from './Widget.jsx';
     border-radius: 5px;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const widgets = document.querySelectorAll('.widget');
+
+    widgets.forEach((widget) => {
+      setTimeout(() => {
+        widget.classList.remove('loading');
+      }, 4000);
+    });
+  });
+</script>
