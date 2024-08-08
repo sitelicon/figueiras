@@ -1,7 +1,11 @@
 import { ui, defaultLang, showDefaultLang } from './ui';
 
 export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split('/figueiras/');
+  const parts = url.pathname.split('/figueiras/');
+  if (parts.length < 2) {
+    return defaultLang;
+  }
+  const lang = parts[1];
   const langParts = lang.split('/');
   const langCode = langParts[0] || defaultLang;
   if (langCode in ui) return langCode as keyof typeof ui;
