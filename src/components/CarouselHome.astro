@@ -6,6 +6,33 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
+<script>
+  // Core de Swiper y estilos
+  import Swiper from 'swiper';
+  import 'swiper/css';
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation } from 'swiper/modules';
+  import { Autoplay } from 'swiper/modules';
+  import 'swiper/css/navigation';
+
+  // Configurar Swiper
+  const swiper = new Swiper('#CarouselHome .swiper', {
+    modules: [Navigation, Autoplay], // definir los módulos a usar
+    loop: true, // definir si los slides estarán en bucle
+    autoplay: {
+      delay: 3000, // Tiempo entre cambios de diapositivas en milisegundos
+      disableOnInteraction: false, // Mantiene el autoplay incluso si el usuario interactúa con el swiper
+    },
+    slidesPerView: 1, // agregar número de slides para la pantalla
+    spaceBetween: 40, // separación entre slides en px
+    navigation: {
+      // definir botones next y prev para el módulo Navigation
+      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next',
+    },
+  });
+</script>
+
 <!-- Contenedor principal de Swiper -->
 <header class="justify-center items-center mx-auto relative">
   <div class="my-4">
@@ -42,33 +69,6 @@ const t = useTranslations(lang);
     </div>
   </div>
 </header>
-
-<script>
-  // Core de Swiper y estilos
-  import Swiper from 'swiper';
-  import 'swiper/css';
-  // Módulo Navigation de Swiper y estilos
-  import { Navigation } from 'swiper/modules';
-  import { Autoplay } from 'swiper/modules';
-  import 'swiper/css/navigation';
-
-  // Configurar Swiper
-  const swiper = new Swiper('#CarouselHome .swiper', {
-    modules: [Navigation, Autoplay], // definir los módulos a usar
-    loop: true, // definir si los slides estarán en bucle
-    autoplay: {
-      delay: 3000, // Tiempo entre cambios de diapositivas en milisegundos
-      disableOnInteraction: false, // Mantiene el autoplay incluso si el usuario interactúa con el swiper
-    },
-    slidesPerView: 1, // agregar número de slides para la pantalla
-    spaceBetween: 40, // separación entre slides en px
-    navigation: {
-      // definir botones next y prev para el módulo Navigation
-      prevEl: '.swiper-button-prev',
-      nextEl: '.swiper-button-next',
-    },
-  });
-</script>
 
 <style>
   .swiper-slide {

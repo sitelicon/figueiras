@@ -1,6 +1,39 @@
 ---
-import { houseReviews } from "../data/reviews";
+import { houseReviews } from '../data/reviews';
 ---
+
+<script>
+  // Core de Swiper y estilos
+  import Swiper from 'swiper';
+  import 'swiper/css';
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation } from 'swiper/modules';
+  import 'swiper/css/navigation';
+
+  // Configurar Swiper
+  const swiper = new Swiper('#swiper2 .swiper', {
+    modules: [Navigation], // definir los módulos a usar
+    loop: true, // definir si los slides estarán en bucle
+    slidesPerView: 1, // inicializa con 1 slide por vista
+    spaceBetween: 40, // separación entre slides en px
+    navigation: {
+      // definir botones next y prev para el módulo Navigation
+      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
 
 <div class="flex flex-col items-center justify-center gap-14">
   <h3 class="uppercase text-2xl md:text-4xl text-center text-sky-700">
@@ -64,39 +97,6 @@ import { houseReviews } from "../data/reviews";
       </div>
     </div>
   </div>
-
-  <script>
-    // Core de Swiper y estilos
-    import Swiper from "swiper";
-    import "swiper/css";
-    // Módulo Navigation de Swiper y estilos
-    import { Navigation } from "swiper/modules";
-    import "swiper/css/navigation";
-
-    // Configurar Swiper
-    const swiper = new Swiper("#swiper2 .swiper", {
-      modules: [Navigation], // definir los módulos a usar
-      loop: true, // definir si los slides estarán en bucle
-      slidesPerView: 1, // inicializa con 1 slide por vista
-      spaceBetween: 40, // separación entre slides en px
-      navigation: {
-        // definir botones next y prev para el módulo Navigation
-        prevEl: ".swiper-button-prev",
-        nextEl: ".swiper-button-next",
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-      },
-    });
-  </script>
 
   <style>
     .swiper {
