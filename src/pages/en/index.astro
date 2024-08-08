@@ -15,7 +15,10 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title="Casas das Figueiras">
+<Layout
+  title="Casas das Figueiras"
+  meta="Alquiler casas vacacionales en Ribadeo, cerca de la playa, disfruta de la gastronomía de Asturias y Galicia."
+>
   <div class="block w-full">
     <CarouselHome />
   </div>
@@ -52,13 +55,3 @@ const t = useTranslations(lang);
     <Footer />
   </footer>
 </Layout>
-
-<script>
-  // Core de Swiper y estilos
-  import Swiper from 'swiper';
-  import 'swiper/css';
-  // Módulo Navigation de Swiper y estilos
-  import { Navigation } from 'swiper/modules';
-  import { Autoplay } from 'swiper/modules';
-  import 'swiper/css/navigation';
-</script>

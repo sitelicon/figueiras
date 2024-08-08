@@ -1,97 +1,97 @@
 ---
-import { carouselhome } from "../data/carouselhome.ts";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { carouselhome } from '../data/carouselhome.ts';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <!-- Contenedor principal de Swiper -->
 <header class="justify-center items-center mx-auto relative">
-    <div class="my-4">
-        <div
-            class="absolute z-50 inset-0 flex items-center justify-center sm:w-[1000px] h-48 sm:h-full pt-14 sm:pt-2 mx-auto"
-        >
-            <div class="text-center text-gray-50 uppercase lg:mb-24">
-                <p class="text-2xl lg:text-4xl">BIENVENIDO A</p>
-                <h1 class="text-3xl lg:text-5xl font-bold">
-                    CASAS DAS FIGUEIRAS
-                </h1>
-                <p class="text-xl lg:text-2xl pt-2">
-                    Alquiler casas vacacionales
-                </p>
-            </div>
-        </div>
-        <div id="CarouselHome">
-        <div class="swiper">
-            <!-- Wrapper adicional requerido -->
-            <div class="swiper-wrapper">
-                <!-- Los slides -->
-                {
-                    carouselhome.map((carouselhome) => (
-                        <div class="swiper-slide">
-                            <img
-                                src={carouselhome.src}
-                                class="h-96 md:h-auto w-full object-cover"
-                                alt={carouselhome.alt}
-                            />
-                        </div>
-                    ))
-                }
-            </div>
-            <!-- Botones de navegación -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
+  <div class="my-4">
+    <div
+      class="absolute z-50 inset-0 flex items-center justify-center sm:w-[1000px] h-48 sm:h-full pt-14 sm:pt-2 mx-auto"
+    >
+      <div class="text-center text-gray-50 uppercase lg:mb-24">
+        <p class="text-2xl lg:text-4xl">{t('header.welcome')}</p>
+        <h1 class="text-3xl lg:text-5xl font-bold">CASAS DAS FIGUEIRAS</h1>
+        <p class="text-xl lg:text-2xl pt-2">{t('header.subtitle')}</p>
+      </div>
     </div>
-</div>
+    <div id="CarouselHome">
+      <div class="swiper">
+        <!-- Wrapper adicional requerido -->
+        <div class="swiper-wrapper">
+          <!-- Los slides -->
+          {
+            carouselhome.map((carouselhome) => (
+              <div class="swiper-slide">
+                <img
+                  src={carouselhome.src}
+                  class="h-96 md:h-auto w-full object-cover"
+                  alt={carouselhome.alt}
+                />
+              </div>
+            ))
+          }
+        </div>
+        <!-- Botones de navegación -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </div>
 </header>
 
 <script>
-    // Core de Swiper y estilos
-    import Swiper from "swiper";
-    import "swiper/css";
-    // Módulo Navigation de Swiper y estilos
-    import { Navigation } from "swiper/modules";
-    import { Autoplay } from "swiper/modules";
-    import "swiper/css/navigation";
+  // Core de Swiper y estilos
+  import Swiper from 'swiper';
+  import 'swiper/css';
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation } from 'swiper/modules';
+  import { Autoplay } from 'swiper/modules';
+  import 'swiper/css/navigation';
 
-    // Configurar Swiper
-    const swiper = new Swiper("#CarouselHome .swiper", {
-        modules: [Navigation, Autoplay], // definir los módulos a usar
-        loop: true, // definir si los slides estarán en bucle
-        autoplay: {
+  // Configurar Swiper
+  const swiper = new Swiper('#CarouselHome .swiper', {
+    modules: [Navigation, Autoplay], // definir los módulos a usar
+    loop: true, // definir si los slides estarán en bucle
+    autoplay: {
       delay: 3000, // Tiempo entre cambios de diapositivas en milisegundos
       disableOnInteraction: false, // Mantiene el autoplay incluso si el usuario interactúa con el swiper
     },
-        slidesPerView: 1, // agregar número de slides para la pantalla
-        spaceBetween: 40, // separación entre slides en px
-        navigation: {
-            // definir botones next y prev para el módulo Navigation
-            prevEl: ".swiper-button-prev",
-            nextEl: ".swiper-button-next",
-        },
-    });
+    slidesPerView: 1, // agregar número de slides para la pantalla
+    spaceBetween: 40, // separación entre slides en px
+    navigation: {
+      // definir botones next y prev para el módulo Navigation
+      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next',
+    },
+  });
 </script>
 
 <style>
-    .swiper-slide {
+  .swiper-slide {
+  }
+  .swiper-slide img {
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: #16b3e0;
+    width: 60px;
+    height: 60px;
+    border-radius: 31px;
+    color: #fff;
+    font-size: 20px !important;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 20px;
+  }
+  @media (max-width: 768px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 80%;
     }
-    .swiper-slide img {
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-        background-color: #16b3e0;
-        width: 60px;
-        height: 60px;
-        border-radius: 31px;
-        color: #fff;
-        font-size: 20px !important;
-    }
-    .swiper-button-prev:after,
-    .swiper-button-next:after {
-        font-size: 20px;
-    }
-    @media (max-width: 768px) {
-        .swiper-button-prev,
-        .swiper-button-next {
-            top: 80%;
-        }
-    }
+  }
 </style>
