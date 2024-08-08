@@ -1,7 +1,7 @@
 ---
-import NavBar from '../components/NavBar.astro';
-import Analytics from '../components/Analytics.astro';
-import { getLangFromUrl } from '../i18n/utils';
+import NavBar from "../components/NavBar.astro";
+
+import { getLangFromUrl } from "../i18n/utils";
 
 interface Props {
   title: string;
@@ -26,8 +26,13 @@ const { title, meta } = Astro.props;
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2NHBQ26PMH"
+    ></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-221395340-1"></script>
+    <script src="/figueiras/js/google.js" type="module"></script>
     <title>{title}</title>
-    <Analytics />
   </head>
 
   <body

@@ -1,5 +1,42 @@
 ---
 import { paymentMethods } from "../data/paymethods";
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "../i18n/utils";
+import { languages } from "../i18n/ui";
+import type { NavBarItems } from "../data/types";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
+const navBarItems: NavBarItems[] = [
+  {
+    route: "",
+    title: t("nav.home"),
+  },
+  {
+    route: "jovellanos",
+    title: t("nav.jovellanos"),
+  },
+  {
+    route: "alameda23",
+    title: t("nav.alameda23"),
+  },
+  {
+    route: "alameda33",
+    title: t("nav.alameda33"),
+  },
+  {
+    route: "avisolegal",
+    title: t("avisolegal"),
+  },
+  {
+    route: "contacto",
+    title: t("nav.contact"),
+  },
+];
 ---
 
 <div
@@ -8,14 +45,16 @@ import { paymentMethods } from "../data/paymethods";
   <hr class="border w-screen md:w-[74rem] bg-slate-400" />
 
   <ul class="flex flex-wrap gap-4 items-center justify-center lg:pl-32">
-    <li>Inicio</li>
-    <li>Casa Jovellanos</li>
-    <li>Casa Alameda 23</li>
-    <li>Casa Alameda 33</li>
-    <li>Nosotros</li>
-    <li>Aviso Legal</li>
-    <li>Normas</li>
-    <li>Contacto</li>
+    {
+      navBarItems.map((item) => (
+        <li class="my-1 lg:my-0">
+          <a href={translatedPath(item.route)} class="">
+            {item.title}
+          </a>
+        </li>
+      ))
+    }
+
     <li>
       <div class="flex gap-1">
         {
@@ -33,5 +72,8 @@ import { paymentMethods } from "../data/paymethods";
     <p>Todos los derechos reservados</p>
   </div>
 
-  <p class="pb-4">Desarrollo Web Sitelicon Web Projects</p>
+  <p class="pb-4">
+    Desarrollo Web <a href="https://www.sitelicon.com" target="_blank"
+      >Sitelicon Web Projects</a>
+  </p>
 </div>
