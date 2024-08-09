@@ -46,6 +46,7 @@ export interface News {
   id: number;
   img: string;
   title: string;
+  link: string;
 }
 
 type PaymentMethods =
