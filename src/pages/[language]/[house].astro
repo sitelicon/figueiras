@@ -31,9 +31,12 @@ const houses = [
 
 export function getStaticPaths() {
   return [
-    { params: { house: 'jovellanos' } },
-    { params: { house: 'alameda23' } },
-    { params: { house: 'alameda33' } },
+    { params: { language: 'en', house: 'jovellanos' } },
+    { params: { language: 'en', house: 'alameda23' } },
+    { params: { language: 'en', house: 'alameda33' } },
+    { params: { language: 'de', house: 'jovellanos' } },
+    { params: { language: 'de', house: 'alameda23' } },
+    { params: { language: 'de', house: 'alameda33' } },
   ];
 }
 
@@ -43,10 +46,12 @@ const selectedHouse = houses.find((h) => h.name === house);
 ---
 
 <Layout
-  title={selectedHouse?.name || 'Casas das Figueiras'}
-  meta="Alquiler casas vacacionales en Ribadeo, cerca de la playa, disfruta de la gastronomía de Asturias y Galicia."
+  title={t(`title.${selectedHouse?.name}` as any)}
+  meta={t(`meta.${selectedHouse?.name}` as any)}
 >
-  <div class="block sm:flex flex-col justify-center items-center">
+  <main
+    class="block sm:flex flex-col justify-center items-center max-w-screen-2xl"
+  >
     <section class="pt-10 w-full">
       <RentForm />
     </section>
@@ -345,7 +350,7 @@ const selectedHouse = houses.find((h) => h.name === house);
         </div>
       </div>
     </section>
-  </div>
+  </main>
 </Layout>
 
 <footer class="pt-12">

@@ -11,17 +11,18 @@ import OtherPlaces from '../../components/OtherPlaces.astro';
 import LastNews from '../../components/LastNews.astro';
 import Footer from '../../components/Footer.astro';
 
+export function getStaticPaths() {
+  return [{ params: { language: 'en' } }, { params: { language: 'de' } }];
+}
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout
-  title="Casas das Figueiras"
-  meta="Alquiler casas vacacionales en Ribadeo, cerca de la playa, disfruta de la gastronomía de Asturias y Galicia."
->
-  <div class="block w-full">
+<Layout title={t('title.home')} meta={t('meta.home')}>
+  <section class="block w-full">
     <CarouselHome />
-  </div>
+  </section>
 
   <section class="pt-10 w-full">
     <RentForm />
@@ -55,3 +56,13 @@ const t = useTranslations(lang);
     <Footer />
   </footer>
 </Layout>
+
+<script>
+  // Core de Swiper y estilos
+  import Swiper from 'swiper';
+  import 'swiper/css';
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation } from 'swiper/modules';
+  import { Autoplay } from 'swiper/modules';
+  import 'swiper/css/navigation';
+</script>
