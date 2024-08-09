@@ -71,10 +71,6 @@ const t = useTranslations(lang);
 </script>
 
 <style>
-  .swiper-slide {
-  }
-  .swiper-slide img {
-  }
   .swiper-button-next,
   .swiper-button-prev {
     background-color: #16b3e0;
@@ -83,15 +79,25 @@ const t = useTranslations(lang);
     border-radius: 31px;
     color: #fff;
     font-size: 20px !important;
+    opacity: 0; /* Ocultar los botones por defecto */
+    transition: opacity 0.3s ease; /* Transición para una apariencia suave */
   }
+
   .swiper-button-prev:after,
   .swiper-button-next:after {
     font-size: 20px;
   }
+
+  header:hover .swiper-button-next,
+  header:hover .swiper-button-prev {
+    opacity: 1; /* Mostrar los botones al hacer hover sobre el header */
+  }
+
   @media (max-width: 768px) {
     .swiper-button-prev,
     .swiper-button-next {
       top: 80%;
+      opacity: 1;
     }
   }
 </style>

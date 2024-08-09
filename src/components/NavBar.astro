@@ -36,16 +36,18 @@ const navBarItems: NavBarItems[] = [
 ];
 ---
 
-<header class="lg:flex lg:w-4/5 w-screen sm:p-5 p-2 gap-5 mx-auto relative">
+<header
+  class="lg:flex lg:w-4/5 w-screen sm:p-5 p-2 gap-5 mx-auto relative max-w-screen-xl"
+>
   <Astronav>
-    <div class="flex w-full1 justify-between">
+    <div class="flex justify-between">
       <a href="/figueiras/">
         <img
           src="/figueiras/logofigueiras.svg"
           alt="Logo"
           width="200"
           height="100"
-          class="w-40"
+          class="w-52"
         />
       </a>
       <div class="block lg:hidden">
@@ -56,7 +58,7 @@ const navBarItems: NavBarItems[] = [
       <div
         class="sm:absolute relative top-auto pb-5 sm:top-4 sm:right-6 right-0 pt-4 sm:pt-2"
       >
-        <ul class="flex gap-4 text-xs text-gray-400 justify-end">
+        <ul class="flex gap-4 text-xs text-gray-600 justify-end">
           {
             Object.entries(languages).map(([lang, label]) => (
               <li>
@@ -70,7 +72,7 @@ const navBarItems: NavBarItems[] = [
           }
         </ul>
       </div>
-      <ul class="flex flex-col lg:flex-row lg:gap-5 lg:w-auto w-full">
+      <ul class="flex flex-col lg:flex-row lg:gap-5 lg:w-auto w-full mt-10">
         {
           navBarItems.map((item) => (
             <li class="my-1 lg:my-0">
