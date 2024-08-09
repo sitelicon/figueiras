@@ -1,7 +1,7 @@
 ---
-import NavBar from "../components/NavBar.astro";
+import NavBar from '../components/NavBar.astro';
 
-import { getLangFromUrl } from "../i18n/utils";
+import { getLangFromUrl } from '../i18n/utils';
 
 interface Props {
   title: string;
@@ -36,7 +36,7 @@ const { title, meta } = Astro.props;
   </head>
 
   <body
-    class="sm:flex flex-col font-figueiras tracking-wide h-full w-full overflow-x-hidden"
+    class="sm:flex flex-col font-figueiras tracking-wide h-full w-full overflow-x-hidden items-center justify-center"
   >
     <NavBar />
     <slot />
