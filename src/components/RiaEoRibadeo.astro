@@ -1,27 +1,55 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class="flex flex-col items-center justify-center gap-6">
+<div class="flex1 flex-col1 items-center1 justify-center1 gap-6">
   <h3 class="text-center text-3xl text-sky-700 uppercase">
-    {t('ribadeo.title01')}
-    <span class="font-bold">{t('ribadeo.title02')}</span>
-    {t('ribadeo.title03')}
+    {t("ribadeo.title01")}
+    <span class="font-bold">{t("ribadeo.title02")}</span>
+    {t("ribadeo.title03")}
   </h3>
 
-  <div class="flex flex-col lg:flex-row gap-6 items-center">
-    <img
-      src="/figueiras/carousel2.jpg"
-      alt=""
-      class="lg:w-2/4 rounded-xl p-1"
-    />
+  <div class="sm:flex block flex-col lg:flex-row gap-6 items-center">
+    <div class="lg:w-2/4">
+      <div id="swiperRia">
+        <div class="swiper">
+          <!-- Wrapper adicional requerido -->
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="/figueiras/carousel2.webp"
+                alt=""
+                class="w-full rounded-xl p-1"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/figueiras/carousel3-_1_.webp"
+                alt=""
+                class="w-full rounded-xl p-1"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/figueiras/carousel4-_1_.webp"
+                alt=""
+                class="w-full rounded-xl p-1"
+              />
+            </div>
+          </div>
+          <!-- Botones de navegación -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
 
-    <div class="px-4 lg:w-1/4 flex flex-col gap-4">
+    <div class="px-4 lg:w-1/4 flex flex-col pt-12 gap-4">
       <p>
-        {t('ribadeo.description')}
+        {t("ribadeo.description")}
       </p>
 
       <div class="flex flex-col gap-5">
@@ -29,7 +57,7 @@ const t = useTranslations(lang);
           href="https://www.turismoasturias.es/descubre/costa/villas-marineras/marinera-figueras"
           class="flex items-center gap-2 uppercase font-bold text-sky-500"
         >
-          <p class="text-sm">{t('ribadeo.link')}</p>
+          <p class="text-sm">{t("ribadeo.link")}</p>
           <img src="/figueiras/link.svg" alt="Link" class="w-3" />
           <img
             src="/figueiras/condetraveler.webp"
@@ -42,7 +70,7 @@ const t = useTranslations(lang);
           class="flex flex-col items-center md:flex-row md:items-start gap-3"
         >
           <button class="bg-sky-500 text-gray-50 text-sm px-5 py-2 rounded-full"
-            >{t('ribadeo.btn')}</button
+            >{t("ribadeo.btn")}</button
           >
 
           <img
@@ -55,3 +83,69 @@ const t = useTranslations(lang);
     </div>
   </div>
 </div>
+
+<script>
+  // Core de Swiper y estilos
+  import Swiper from "swiper";
+  //import "swiper/css";
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation } from "swiper/modules";
+  import { Autoplay } from "swiper/modules";
+  import "swiper/css/navigation";
+
+  // Configurar Swiper
+  const swiper = new Swiper("#swiperRia .swiper", {
+    modules: [Navigation, Autoplay], // definir los módulos a usar
+    loop: true, // definir si los slides estarán en bucle
+    slidesPerView: 1, // inicializa con 1 slide por vista
+    spaceBetween: 40, // separación entre slides en px
+    autoplay: {
+      delay: 3000, // Tiempo entre cambios de diapositivas en milisegundos
+      disableOnInteraction: false, // Mantiene el autoplay incluso si el usuario interactúa con el swiper
+    },
+    navigation: {
+      // definir botones next y prev para el módulo Navigation
+      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 1,
+      },
+    },
+  });
+</script>
+
+<style>
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: transparent;
+    width: 60px;
+    height: 60px;
+    border-radius: 31px;
+    color: #000;
+    border: solid 1px #fff;
+    font-size: 20px !important;
+    opacity: 0; /* Ocultar los botones por defecto */
+    transition: opacity 0.3s ease; /* Transición para una apariencia suave */
+  }
+  #swiperRia:hover .swiper-button-next,
+  #swiperRia:hover .swiper-button-prev {
+    background-color: #fff;
+    opacity: 1; /* Mostrar los botones al hacer hover sobre el header */
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 20px;
+  }
+</style>

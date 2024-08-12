@@ -40,6 +40,7 @@ export interface Review {
   name: string;
   house: FigueirasHouse;
   date: string;
+  link: string;
 }
 
 export interface News {

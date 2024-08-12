@@ -19,7 +19,7 @@ import { lastNews } from "../data/news.ts";
           {
             lastNews.map((news) => {
               return (
-                <div class="swiper-slide flex flex-col w-full sm:w-[24rem] px-5 sm:px-0 gap-4">
+                <div class="swiper-slide flex flex-col sm:w-[24rem] px-5 sm:px-0 gap-4">
                   <a href={news.link} target="_blank">
                     <div class="flex1 flex-col1 gap-2">
                       <img src={news.img} alt={news.title} class="w-full" />
@@ -28,7 +28,7 @@ import { lastNews } from "../data/news.ts";
                         {news.title}
                       </h4>
                     </div>
-                    <div class="flex gap-1 1items-center">
+                    <div class="flex gap-1">
                       <a class="uppercase text-sm text-sky-600">Ver más</a>
                       <img src="/figueiras/bluelink.svg" alt="" class="w-3" />
                     </div>

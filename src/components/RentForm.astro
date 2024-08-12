@@ -1,5 +1,5 @@
 ---
-import Widgets from './Widget.jsx';
+import Widgets from "./Widget.jsx";
 ---
 
 <div class="flex flex-col gap-5">
@@ -12,7 +12,7 @@ import Widgets from './Widget.jsx';
   <!-- <Widgets client:load />-->
   <div
     id="widget1"
-    class="widget loading h-[250px] md:h-[150px] overflow-hidden"
+    class="widget loading h-[261px] md:h-[150px] overflow-hidden"
   >
     <!-- Contenido del widget -->
     <div id="apartmentIframeAll">
@@ -22,9 +22,9 @@ import Widgets from './Widget.jsx';
       ></script>
       <script>
         BookingToolIframe.initialize({
-          url: 'https://login.smoobu.com/es/booking-tool/iframe/485990?apartmentGroups[]=1441395&apartmentGroups[]=1596016&apartmentGroups[]=1441391&apartmentGroups[]=1422470',
-          baseUrl: 'https://login.smoobu.com',
-          target: '#apartmentIframeAll',
+          url: "https://login.smoobu.com/es/booking-tool/iframe/485990?apartmentGroups[]=1441395&apartmentGroups[]=1596016&apartmentGroups[]=1441391&apartmentGroups[]=1422470",
+          baseUrl: "https://login.smoobu.com",
+          target: "#apartmentIframeAll",
         });
       </script>
     </div>
@@ -42,12 +42,12 @@ import Widgets from './Widget.jsx';
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const widgets = document.querySelectorAll('.widget');
+  document.addEventListener("DOMContentLoaded", () => {
+    const widgets = document.querySelectorAll(".widget");
 
     widgets.forEach((widget) => {
       setTimeout(() => {
-        widget.classList.remove('loading');
+        widget.classList.remove("loading");
       }, 1000);
     });
   });
