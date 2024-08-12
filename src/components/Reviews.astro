@@ -1,12 +1,14 @@
 ---
 import { houseReviews } from "../data/reviews";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="flex flex-col items-center justify-center gap-14">
   <h3 class="uppercase text-2xl md:text-4xl text-center text-sky-700">
-    Qué dicen de nuestras <br />casas rurales en <span class="font-bold"
-      >Asturias</span
-    >
+    {t("dicen")}
+    <span class="font-bold">Asturias</span>
   </h3>
 
   <div class="bg-gray-100 w-full">
@@ -21,8 +23,29 @@ import { houseReviews } from "../data/reviews";
             <!-- Los slides -->
             {
               houseReviews.map((reviews) => {
-                const { review, title, description, name, house, date, link } =
-                  reviews;
+                const {
+                  review,
+                  title_es,
+                  title_en,
+                  title_de,
+                  description_es,
+                  description_en,
+                  description_de,
+                  name,
+                  house,
+                  date_es,
+                  date_en,
+                  date_de,
+                  link,
+                } = reviews;
+
+                // Supongamos que tienes una variable lang que contiene el idioma actual
+                const lang = getLangFromUrl(Astro.url);
+
+                // Concatenación basada en idioma
+                const title = reviews[`title_${lang}`];
+                const description = reviews[`description_${lang}`];
+                const date = reviews[`date_${lang}`];
 
                 return (
                   <div class="swiper-slide shadow-xl bg-gray-50">
@@ -44,7 +67,7 @@ import { houseReviews } from "../data/reviews";
                           target="_blank"
                           class="text-sky-600 font-bold"
                         >
-                          Ver más
+                          {t("vermas")}
                         </a>
                       </div>
                       <div class="bg-sky-500 p-4">

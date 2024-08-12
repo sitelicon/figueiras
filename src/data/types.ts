@@ -22,10 +22,14 @@ export interface CarouselHome {
 
 export interface House {
   id: number;
-  title: string;
+  title_es: string;
+  title_en: string;
+  title_de: string;
   backgroundPc: string;
   backgroundMobile: string;
-  description: string;
+  description_es: string;
+  description_en: string;
+  description_de: string;
   registerNumber: string;
   bookingImg: string;
 }
@@ -35,18 +39,26 @@ export type FigueirasHouse = 'Alameda 23' | 'Jovellanos 19' | 'Alameda 33';
 export interface Review {
   id: number;
   review: string;
-  title: string;
-  description: string;
+  title_es: string;
+  title_en: string;
+  title_de: string;
+  description_es: string;
+  description_en: string;
+  description_de: string;
   name: string;
   house: FigueirasHouse;
-  date: string;
+  date_es: string;
+  date_en: string;
+  date_de: string;
   link: string;
 }
 
 export interface News {
   id: number;
   img: string;
-  title: string;
+  title_es: string;
+  title_en: string;
+  title_de: string;
   link: string;
 }
 

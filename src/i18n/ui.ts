@@ -45,6 +45,16 @@ export const ui = {
     'title.contacto': 'Alquiler Casa Vacacional en Ribadeo - Casas Das Figueiras',
     'meta.contacto': 'Alquiler casas vacacionales en Ribadeo, cerca de la playa, disfruta de la gastronomía de Asturias y Galicia.',
     'avisolegal': 'Aviso Legal',
+    'tituloreservar': 'Reservar',
+    'vermas': 'Ver más',
+    'ultimas': 'Últimas',
+    'noticias': 'Noticias',
+    'otros': 'Otros lugares con encanto en',
+    'espana': 'España',
+    'dicen': 'Qué dicen de nuestras casas rurales en',
+    'conoce': 'Conoce',
+    'lacasa': 'la casa',
+    'ver': 'Ver',
   },
   en: {
     'nav.home': '',
@@ -82,6 +92,17 @@ export const ui = {
     'title.contacto': 'Vacation Home Rental in Ribadeo - Casas Das Figueiras',
     'meta.contacto': 'Rent holiday homes in Ribadeo, near the beach, enjoy the gastronomy of Asturias and Galicia.',
     'avisolegal': 'Legal Notice',
+    'tituloreservar': 'Book',
+    'vermas': 'See more',
+    'ultimas': 'Latest',
+    'noticias': 'News',
+    'otros': 'Other charming places in',
+    'espana': 'Spain',
+    'dicen': 'What they say about our rural houses in',
+    'conoce': 'Learn about',
+    'lacasa': 'the house',
+    'ver': 'See'
+
   },
   de: {
     'nav.home': '',
@@ -119,5 +140,17 @@ export const ui = {
     'title.contacto': 'Ferienhausvermietung in Ribadeo - Casas Das Figueiras',
     'meta.contacto': 'Mieten Sie Ferienhäuser in Ribadeo, in Strandnähe, genießen Sie die Gastronomie Asturiens und Galiziens.',
     'avisolegal': 'Rechtlicher Hinweis',
+    'tituloreservar': 'Reservieren',
+    'vermas': 'Mehr sehen',
+    'ultimas': 'Neueste',
+    'noticias': 'Nachrichten',
+    'otros': 'Weitere charmante Orte in',
+    'espana': 'Spanien',
+    'dicen': 'Was sie über unsere Landhäuser in sagen',
+    'conoce': 'Erfahre mehr über',
+    'lacasa': 'das Haus',
+    'ver': 'Sehen'
+
+
   },
 } as const;

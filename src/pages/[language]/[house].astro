@@ -1,15 +1,15 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import RentForm from '../../components/RentForm.astro';
-import Footer from '../../components/Footer.astro';
-import CalendarioCasa from '../../components/ficha/CalendarioCasa.astro';
-import CalendarioApartamento from '../../components/ficha/CalendarioApartamento.astro';
-import Caracteristicas from '../../components/ficha/Caracteristicas.astro';
-import Certificaciones from '../../components/ficha/Certificaciones.astro';
-import Localizacion from '../../components/ficha/Localizacion.astro';
-import Encontranos from '../../components/ficha/Encontranos.astro';
-import Carousel from '../../components/ficha/Carousel.astro';
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import RentForm from "../../components/RentForm.astro";
+import Footer from "../../components/Footer.astro";
+import CalendarioCasa from "../../components/ficha/CalendarioCasa.astro";
+import CalendarioApartamento from "../../components/ficha/CalendarioApartamento.astro";
+import Caracteristicas from "../../components/ficha/Caracteristicas.astro";
+import Certificaciones from "../../components/ficha/Certificaciones.astro";
+import Localizacion from "../../components/ficha/Localizacion.astro";
+import Encontranos from "../../components/ficha/Encontranos.astro";
+import Carousel from "../../components/ficha/Carousel.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,26 +17,26 @@ const t = useTranslations(lang);
 const houses = [
   {
     id: 1,
-    name: 'jovellanos',
+    name: "jovellanos",
   },
   {
     id: 2,
-    name: 'alameda23',
+    name: "alameda23",
   },
   {
     id: 3,
-    name: 'alameda33',
+    name: "alameda33",
   },
 ];
 
 export function getStaticPaths() {
   return [
-    { params: { language: 'en', house: 'jovellanos' } },
-    { params: { language: 'en', house: 'alameda23' } },
-    { params: { language: 'en', house: 'alameda33' } },
-    { params: { language: 'de', house: 'jovellanos' } },
-    { params: { language: 'de', house: 'alameda23' } },
-    { params: { language: 'de', house: 'alameda33' } },
+    { params: { language: "en", house: "jovellanos" } },
+    { params: { language: "en", house: "alameda23" } },
+    { params: { language: "en", house: "alameda33" } },
+    { params: { language: "de", house: "jovellanos" } },
+    { params: { language: "de", house: "alameda23" } },
+    { params: { language: "de", house: "alameda33" } },
   ];
 }
 

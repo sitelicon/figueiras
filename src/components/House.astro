@@ -1,14 +1,24 @@
 ---
 import { homeHouses } from "../data/houses";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="flex flex-col gap-8 lg:gap-24">
   {
     homeHouses.map((house) => {
+      // Supongamos que tienes una variable lang que contiene el idioma actual
+      const lang = getLangFromUrl(Astro.url);
+
+      // Concatenación basada en idioma
+      const title = house[`title_${lang}`];
+      const description = house[`description_${lang}`];
+
       return (
         <div>
           <h3 class="text-center text-2xl md:text-4xl text-sky-700 uppercase font-bold">
-            {house.title}
+            {title}
           </h3>
           <div class="relative pt-8">
             <img
@@ -29,12 +39,12 @@ import { homeHouses } from "../data/houses";
               <div class="w-3/4 lg:w-1/4 textofondo lg:p-6 min-w-72 max-w-96">
                 <div class="flex flex-col gap-4 items-start p-5 lg:p-0">
                   <h3 class="text-2xl uppercase text-white">
-                    Conoce <span class="font-bold">la casa</span>
+                    {t("conoce")} <span class="font-bold">{t("lacasa")}</span>
                   </h3>
-                  <p class="text-white">{house.description}</p>
+                  <p class="text-white">{description}</p>
                   <p class="text-white">{house.registerNumber}</p>
                   <button class="text-white border-white border rounded-3xl p-4 hover:bg-sky-700 hover:border-sky-700 hover:text-white">
-                    Ver {house.title}
+                    {t("ver")} {title}
                   </button>
                 </div>
                 <img
