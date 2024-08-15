@@ -1,15 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import RentForm from "../components/RentForm.astro";
-import Footer from "../components/Footer.astro";
-import CalendarioCasa from "../components/ficha/CalendarioCasa.astro";
-import CalendarioApartamento from "../components/ficha/CalendarioApartamento.astro";
-import Caracteristicas from "../components/ficha/Caracteristicas.astro";
-import Certificaciones from "../components/ficha/Certificaciones.astro";
-import Localizacion from "../components/ficha/Localizacion.astro";
-import Encontranos from "../components/ficha/Encontranos.astro";
-import Carousel from "../components/ficha/Carousel.astro";
+import Layout from '../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import RentForm from '../components/RentForm.astro';
+import Footer from '../components/Footer.astro';
+import CalendarioCasa from '../components/ficha/CalendarioCasa.astro';
+import CalendarioApartamento from '../components/ficha/CalendarioApartamento.astro';
+import Caracteristicas from '../components/ficha/Caracteristicas.astro';
+import Certificaciones from '../components/ficha/Certificaciones.astro';
+import Localizacion from '../components/ficha/Localizacion.astro';
+import Encontranos from '../components/ficha/Encontranos.astro';
+import Carousel from '../components/ficha/Carousel.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,23 +17,23 @@ const t = useTranslations(lang);
 const houses = [
   {
     id: 1,
-    name: "jovellanos",
+    name: 'jovellanos',
   },
   {
     id: 2,
-    name: "alameda23",
+    name: 'alameda23',
   },
   {
     id: 3,
-    name: "alameda33",
+    name: 'alameda33',
   },
 ];
 
 export function getStaticPaths() {
   return [
-    { params: { house: "jovellanos" } },
-    { params: { house: "alameda23" } },
-    { params: { house: "alameda33" } },
+    { params: { house: 'jovellanos' } },
+    { params: { house: 'alameda23' } },
+    { params: { house: 'alameda33' } },
   ];
 }
 
@@ -46,12 +46,12 @@ const selectedHouse = houses.find((h) => h.name === house);
   title={t(`title.${selectedHouse?.name}` as any)}
   meta={t(`meta.${selectedHouse?.name}` as any)}
 >
-  <main class="block flex flex-col justify-center items-center">
+  <main class="flex flex-col justify-center items-center">
     <section class="pt-10 w-full">
       <RentForm />
     </section>
 
-    <section class="lg:w-4/5 gap-7 w-screen">
+    <section class="lg:w-4/5 gap-7 maxWidth">
       <div class="w-full">
         <h1 class="text-center text-xl text-sky-700 uppercase">
           {t(`${selectedHouse?.name}.title01` as any)}
@@ -367,5 +367,9 @@ const selectedHouse = houses.find((h) => h.name === house);
     border: 1px solid #c0c0c0;
     padding: 5px;
     text-align: center;
+  }
+
+  .maxWidth {
+    max-width: 1200px;
   }
 </style>
