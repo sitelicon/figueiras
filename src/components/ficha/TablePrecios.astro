@@ -1,0 +1,73 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const houses = [
+    {
+        id: 1,
+        name: "jovellanos",
+    },
+    {
+        id: 2,
+        name: "alameda23",
+    },
+    {
+        id: 3,
+        name: "alameda33",
+    },
+];
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { house } = Astro.params;
+
+const selectedHouse = houses.find((h) => h.name === house);
+---
+
+<table class="tablademo">
+    <thead>
+        <tr>
+            <th>{t("precio.noche")}</th>
+            <th>{t("temporada.baja")}</th>
+            <th>{t("temporada.media")}</th>
+            <th>{t("temporada.alta")}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;{t("restricciones.vd_min_3_noches")}<br /></td>
+            <td>{t("restricciones.min_3_noches")}</td>
+            <td>&nbsp;{t("restricciones.min_6_noches")}</td>
+        </tr>
+        <tr>
+            <td>&nbsp;{t("capacidad.3_pers")}</td>
+            <td>&nbsp;{t(`tbvd3p.${selectedHouse?.name}`)}<br /></td>
+            <td>{t(`min3noches3p.${selectedHouse?.name}`)}</td>
+            <td>{t(`min6noches3p.${selectedHouse?.name}`)}</td>
+        </tr>
+        <tr>
+            <td>{t("capacidad.6_pers")}</td>
+            <td>{t(`tbvd6p.${selectedHouse?.name}`)}</td>
+            <td>{t(`min3noches6p.${selectedHouse?.name}`)}</td>
+            <td>{t(`min6noches6p.${selectedHouse?.name}`)}</td>
+        </tr>
+    </tbody>
+</table>
+<style>
+    .tablademo {
+        border: 1px solid #c0c0c0;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    .tablademo th {
+        border: 1px solid #c0c0c0;
+        padding: 5px;
+        background: #f0f0f0;
+    }
+    .tablademo td {
+        border: 1px solid #c0c0c0;
+        padding: 5px;
+        text-align: center;
+    }
+</style>

@@ -1,8 +1,33 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const houses = [
+  {
+    id: 1,
+    name: "jovellanos",
+    mapa: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2892.2269170719132!2d-7.024313584422019!3d43.53931156780556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDMyJzIxLjUiTiA3wrAwMScxOS43Ilc!5e0!3m2!1ses!2sar!4v1559859243211!5m2!1ses!2sar",
+  },
+  {
+    id: 2,
+    name: "alameda23",
+    mapa: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2892.2680449694662!2d-7.022569484434707!3d43.53845416786094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd317e625fdb46a5%3A0x9cf7163f338ca9e1!2sCalle%20Alameda%2C%2023%2C%2033794%20Castropol%2C%20Asturias%2C%20Espa%C3%B1a!5e0!3m2!1ses!2sar!4v1591821556374!5m2!1ses!2sar",
+  },
+  {
+    id: 3,
+    name: "alameda33",
+    mapa: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2892.258470588147!2d-7.022434048865854!3d43.53865376774549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd317e62f5f2ee07%3A0xde69b3c238a671d1!2sCalle%20Alameda%2C%2033%2C%2033794%20Castropol%2C%20Asturias%2C%20Espa%C3%B1a!5e0!3m2!1ses!2sar!4v1620329470921!5m2!1ses!2sar",
+  },
+];
+const { house } = Astro.params;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const selectedHouse = houses.find((h) => h.name === house);
+---
+
 <h3 class="my-5 text-2xl text-sky-700 font-bold border-b-2 leading-8">
-  Localización
+  {t("Localizacion")}
 </h3>
 <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2892.2269170719132!2d-7.024313584422019!3d43.53931156780556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDMyJzIxLjUiTiA3wrAwMScxOS43Ilc!5e0!3m2!1ses!2sar!4v1559859243211!5m2!1ses!2sar"
+  src={selectedHouse.mapa}
   width="100%"
   height="450"
   frameborder="0"

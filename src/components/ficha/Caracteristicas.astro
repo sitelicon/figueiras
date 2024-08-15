@@ -1,15 +1,46 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const houses = [
+  {
+    id: 1,
+    name: "jovellanos",
+  },
+  {
+    id: 2,
+    name: "alameda23",
+  },
+  {
+    id: 3,
+    name: "alameda33",
+  },
+];
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { house } = Astro.params;
+
+const selectedHouse = houses.find((h) => h.name === house);
+---
+
 <h3 class="my-5 text-2xl text-sky-700 font-bold border-b-2 leading-8">
-  Caracteristicas
+  {t("Caracteristicas")}
 </h3>
 <p>
-  <span class="text-gray-400">Precio</span> 109 € / 199 € ( Precio por día )<br
-  />
+  <span class="text-gray-400">{t("precio")}</span>
+  {t(`precio.${selectedHouse?.name}`)}
+  {t("precio.por_dia")}<br />
 
-  <span class="text-gray-400">Habitaciones</span> 4<br />
-  <span class="text-gray-400">Baños</span> 2<br />
-  <span class="text-gray-400">Superficie construida</span>
-  125 m²<br />
-  <span class="text-gray-400">Cantidad de Personas</span> 6<br />
-  <span class="text-gray-400">Superficie Patio</span> 20m²<br />
+  <span class="text-gray-400">{t("habitaciones")}</span>
+  {t(`habitaciones.${selectedHouse?.name}`)}<br />
+  <span class="text-gray-400">{t("banos")}</span>
+  {t(`banos.${selectedHouse?.name}`)}<br />
+  <span class="text-gray-400">{t("superficie_construida")}</span>
+  {t(`superficie_construida.${selectedHouse?.name}`)}<br />
+  <span class="text-gray-400">{t("cantidad_personas")}</span>
+  {t(`cantidad_personas.${selectedHouse?.name}`)}<br />
+  <span class="text-gray-400">{t("superficie_patio")}</span>
+  {t(`superficie_patio.${selectedHouse?.name}`)}<br />
   <span class="text-gray-400">Wifi</span>
 </p>
