@@ -1,4 +1,29 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const houses = [
+  {
+    id: 1,
+    name: "jovellanos",
+    logobooking: "/figueiras/PremioCasaJovellanos.png",
+  },
+  {
+    id: 2,
+    name: "alameda23",
+    logobooking: "/figueiras/alameda23Digital-Award-TRA-2024.png",
+  },
+  {
+    id: 3,
+    name: "alameda33",
+    logobooking: "/figueiras/Digital-Award-TRA-2024alameda33.png",
+  },
+];
+const { house } = Astro.params;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const selectedHouse = houses.find((h) => h.name === house);
+---
+
 <h3 class="my-5 text-xl text-sky-700 font-bold border-b-2 leading-8">
-  CERTIFICACIONES
+  {t("certificaciones")}
 </h3>
-<img src="/figueiras/PremioCasaJovellanos.png" />
+<img src={selectedHouse.logobooking} />

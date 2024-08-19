@@ -1,19 +1,53 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const houses = [
+  {
+    id: 1,
+    name: "jovellanos",
+    booking:
+      "https://www.booking.com/hotel/es/casa-jovellanos.es.html?aid=376371;label=es-JCB2UqznXtCO_RDP_nj5CAS267778198069%3Apl%3Ata%3Ap1%3Ap22.526.000%3Aac%3Aap1t1%3Aneg%3Afi%3Atikwd-65526620%3Alp9061036%3Ali%3Adec%3Adm;sid=f121087513e67dc06f498d39dfc16e23;dest_id=-377272;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=13;hpos=13;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;srepoch=1571060967;srpvid=3b9c613351e30150;type=total;ucfs=1&#hotelTmpl",
+    vrbo: "https://www.homeaway.es/p10413306?noDates=true",
+    airbnb:
+      "https://www.airbnb.es/rooms/35676782?adults=1&source_impression_id=p3_1570535185_mG441rOOHOlyoddE",
+  },
+  {
+    id: 2,
+    name: "alameda23",
+    booking:
+      "https://www.booking.com/hotel/es/casa-alameda-castropol.es-ar.html",
+    vrbo: "https://www.vrbo.com/es-es/p10682928?noDates=true",
+    airbnb: "https://www.airbnb.es/rooms/43707300",
+  },
+  {
+    id: 3,
+    name: "alameda33",
+    booking: "",
+    vrbo: "",
+    airbnb: "",
+  },
+];
+const { house } = Astro.params;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const selectedHouse = houses.find((h) => h.name === house);
+---
+
 <h3 class="my-5 text-xl text-sky-700 font-bold border-b-2 leading-8">
-  ENCONTRANOS EN:
+  {t("encontranos")}
 </h3>
 
 <div class="flex">
-  <a href="" target="_blank"
+  <a href={selectedHouse.vrbo} target="_blank"
     ><img src="/figueiras/vrbo.webp" class="w-16 object-contain mr-4" alt="" />
   </a>
-  <a href="" target="_blank"
+  <a href={selectedHouse.airbnb} target="_blank"
     ><img
       src="/figueiras/airbnb.webp"
       class="w-16 object-contain mr-4"
       alt=""
     />
   </a>
-  <a href="" target="_blank"
+  <a href={selectedHouse.booking} target="_blank"
     ><img
       src="/figueiras/booking.webp"
       class="w-16 object-contain mr-4"

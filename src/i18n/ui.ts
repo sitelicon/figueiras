@@ -114,6 +114,8 @@ export const ui = {
     'superficie_patio.alameda33': '30m²',
     'Caracteristicas': 'Caracteristicas',
     'Localizacion': 'Localizacion',
+    'encontranos': 'ENCONTRANOS EN:',
+    'certificaciones': 'CERTIFICACIONES',
   },
   en: {
     'nav.home': '',
@@ -184,6 +186,8 @@ export const ui = {
     'superficie_patio': 'Yard Area',
     'Caracteristicas': 'Specifications',
     'Localizacion': 'Location',
+    'encontranos': 'FIND US AT:',
+    'certificaciones': 'CERTIFICATIONS',
   },
   de: {
     'nav.home': '',
@@ -259,5 +263,7 @@ export const ui = {
     'superficie_patio': 'Hofbereich',
     'Caracteristicas': 'Eigenschaften',
     'Localizacion': 'Lage',
+    'encontranos': 'FINDEN SIE UNS UNTER:',
+    'certificaciones': 'ZERTIFIZIERUNGEN',
   },
 } as const;
