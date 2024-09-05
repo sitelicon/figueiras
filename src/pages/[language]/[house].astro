@@ -1,15 +1,16 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import RentForm from "../../components/RentForm.astro";
-import Footer from "../../components/Footer.astro";
-import CalendarioCasa from "../../components/ficha/CalendarioCasa.astro";
-import CalendarioApartamento from "../../components/ficha/CalendarioApartamento.astro";
-import Caracteristicas from "../../components/ficha/Caracteristicas.astro";
-import Certificaciones from "../../components/ficha/Certificaciones.astro";
-import Localizacion from "../../components/ficha/Localizacion.astro";
-import Encontranos from "../../components/ficha/Encontranos.astro";
-import Carousel from "../../components/ficha/Carousel.astro";
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import RentForm from '../../components/RentForm.astro';
+import Footer from '../../components/Footer.astro';
+import CalendarioCasa from '../../components/ficha/CalendarioCasa.astro';
+import CalendarioApartamento from '../../components/ficha/CalendarioApartamento.astro';
+import Caracteristicas from '../../components/ficha/Caracteristicas.astro';
+import Certificaciones from '../../components/ficha/Certificaciones.astro';
+import Localizacion from '../../components/ficha/Localizacion.astro';
+import Encontranos from '../../components/ficha/Encontranos.astro';
+import Carousel from '../../components/ficha/Carousel.astro';
+import TablePrecios from '../../components/ficha/TablePrecios.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,26 +18,26 @@ const t = useTranslations(lang);
 const houses = [
   {
     id: 1,
-    name: "jovellanos",
+    name: 'jovellanos',
   },
   {
     id: 2,
-    name: "alameda23",
+    name: 'alameda23',
   },
   {
     id: 3,
-    name: "alameda33",
+    name: 'alameda33',
   },
 ];
 
 export function getStaticPaths() {
   return [
-    { params: { language: "en", house: "jovellanos" } },
-    { params: { language: "en", house: "alameda23" } },
-    { params: { language: "en", house: "alameda33" } },
-    { params: { language: "de", house: "jovellanos" } },
-    { params: { language: "de", house: "alameda23" } },
-    { params: { language: "de", house: "alameda33" } },
+    { params: { language: 'en', house: 'jovellanos' } },
+    { params: { language: 'en', house: 'alameda23' } },
+    { params: { language: 'en', house: 'alameda33' } },
+    { params: { language: 'de', house: 'jovellanos' } },
+    { params: { language: 'de', house: 'alameda23' } },
+    { params: { language: 'de', house: 'alameda33' } },
   ];
 }
 
@@ -54,12 +55,14 @@ const selectedHouse = houses.find((h) => h.name === house);
       <RentForm />
     </section>
 
-    <section class="lg:w-4/5 gap-7 w-screen">
+    <section class="lg:w-4/5 gap-7 maxWidth">
       <div class="w-full">
         <h1 class="text-center text-xl text-sky-700 uppercase">
           {t(`${selectedHouse?.name}.title01` as any)}
         </h1>
-        <h2 class="text-center lg:text-4xl text-sky-700 font-bold uppercase">
+        <h2
+          class="text-center sm:text-3xl lg:text-4xl text-sky-700 font-bold uppercase"
+        >
           {t(`${selectedHouse?.name}.title02` as any)}
         </h2>
       </div>
@@ -67,12 +70,33 @@ const selectedHouse = houses.find((h) => h.name === house);
       <Carousel />
 
       <CalendarioCasa />
-
       <CalendarioApartamento />
 
-      <div class="w-full">
+      <ul class="flex flex-wrap pt-4 pb-4 mt-6 border-b border-t">
+        <li class="flex items-center mr-3">
+          <img src="/figueiras/icodormitorios_p.jpg" />
+          <span class="border border-black px-2 py-1">6</span>
+        </li>
+        <li class="flex items-center mr-3">
+          <img src="/figueiras/icobanos_p.jpg" />
+          <span class="border border-black px-2 py-1">3</span>
+        </li>
+        <li class="flex items-center mr-3">
+          <img src="/figueiras/icoparcela_p.jpg" />
+          <span class="border border-black px-2 py-1">20</span>
+        </li>
+        <li class="flex items-center mr-3">
+          <img src="/figueiras/icosuperficiecasa_p.jpg" />
+          <span class="border border-black px-2 py-1">125</span>
+        </li>
+        <li class="flex items-center mr-3">
+          <img src="/figueiras/icowifi_p.jpg" />
+        </li>
+      </ul>
+
+      <div class="w-full mt-10">
         <h2 class="text-center lg:text-4xl text-sky-700 font-bold">
-          Alquiler vacacional en Asturias
+          {t('alquiler_vacacional_asturias')}
         </h2>
 
         <div class="container mx-auto p-4">
@@ -80,41 +104,12 @@ const selectedHouse = houses.find((h) => h.name === house);
             <div class="w-full md:w-[70%] p-2">
               <!-- Contenido de la primera columna -->
               <h3
-                class="my-5 sm:text-xl text-md text-sky-700 font-bold border-b-2 leading-8"
+                class="my-5 text-2xl text-sky-700 font-bold border-b-2 leading-8"
               >
-                Descripción del alojamiento rural
+                {t('descripcion.alojamiento_rural')}
               </h3>
 
-              <table class="tablademo">
-                <thead>
-                  <tr>
-                    <th>Precio x noche</th>
-                    <th>Tem baja</th>
-                    <th>Temp media</th>
-                    <th>Temp alta</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;V-D - Min 3 noches<br /></td>
-                    <td>Min 3 noches</td>
-                    <td>&nbsp;Min 6 noches</td>
-                  </tr>
-                  <tr>
-                    <td>&nbsp;Cap 3 pers</td>
-                    <td>&nbsp;125€ - 90€<br /></td>
-                    <td>125€</td>
-                    <td>X</td>
-                  </tr>
-                  <tr>
-                    <td>Cap 6 pers</td>
-                    <td>165€ - 109€</td>
-                    <td>109€</td>
-                    <td>199€</td>
-                  </tr>
-                </tbody>
-              </table>
+              <TablePrecios />
 
               <!--  -->
               <p class="pt-6 pr-0 sm:pr-10">
@@ -334,11 +329,13 @@ const selectedHouse = houses.find((h) => h.name === house);
               <Caracteristicas />
               <Localizacion />
               <p class="my-2">
-                Casa/Apartamento Jovellanos<br />
+                {t('tipo.casa_apartamento')}
+                {selectedHouse?.name?.toUpperCase()}
+                <br />
 
                 Casas Das Figueiras<br />
 
-                Situada en el centro de Figueiras.
+                {t('ubicacion.centro_figueiras')}.
               </p>
               <Encontranos />
 
@@ -356,19 +353,7 @@ const selectedHouse = houses.find((h) => h.name === house);
 </footer>
 
 <style>
-  .tablademo {
-    border: 1px solid #c0c0c0;
-    border-collapse: collapse;
-    padding: 5px;
-  }
-  .tablademo th {
-    border: 1px solid #c0c0c0;
-    padding: 5px;
-    background: #f0f0f0;
-  }
-  .tablademo td {
-    border: 1px solid #c0c0c0;
-    padding: 5px;
-    text-align: center;
+  .maxWidth {
+    max-width: 1200px;
   }
 </style>
