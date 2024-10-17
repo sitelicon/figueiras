@@ -1,29 +1,105 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const smoobu = [
+  {
+    id: 1,
+    name: "jovellanos",
+  },
+  {
+    id: 2,
+    name: "alameda23",
+  },
+  {
+    id: 3,
+    name: "alameda33",
+  },
+];
+const { house } = Astro.params;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const selectedHouse = smoobu.find((h) => h.name === house);
+---
+
 <div>
-  <h3
-    class="my-5 md:mx-5 lg:mx-0 text-2xl text-center md:text-left text-sky-700 font-bold border-b-2 leading-8"
-  >
-    Casa - Calendario disponibilidad
-  </h3>
+  
 
   <div class="w-full">
-    <div id="smoobuCalendarIframe">
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://login.smoobu.com/css/singleCalendarWidgetIframe.css"
-      />
-      <iframe
-        class="smallDevices mx-auto"
-        height="540px"
-        width="280px"
-        src="https://login.smoobu.com/es/cockpit/widget/show-calendar-iframe/1441391/c9ff64ae37c55f37019fa9a8bafdb5ba285b4307dccd9ca8b4a321793304d85f"
-      ></iframe>
-      <iframe
-        class="bigDevices mx-auto"
-        height="450px"
-        width="1000px"
-        src="https://login.smoobu.com/es/cockpit/widget/show-calendar-iframe/1441391/c9ff64ae37c55f37019fa9a8bafdb5ba285b4307dccd9ca8b4a321793304d85f"
-      ></iframe>
-    </div>
+    {
+      selectedHouse ? (
+        <>
+          {selectedHouse.id === 1 ? (
+            <h3
+    class="my-5 md:mx-5 lg:mx-0 text-2xl text-center md:text-left text-sky-700 font-bold border-b-2 leading-8"
+  >
+    {t("calendariodispcasa")}
+  </h3>
+
+<div id="smoobuCalendarIframe">  <link rel="stylesheet" type="text/css" href="https://login.smoobu.com/css/singleCalendarWidgetIframe.css">  <iframe class="smallDevices mx-auto" height="540px" width="280px" src="https://login.smoobu.com/es/cockpit/widget/show-calendar-iframe/1441391/c9ff64ae37c55f37019fa9a8bafdb5ba285b4307dccd9ca8b4a321793304d85f"></iframe>  <iframe class="bigDevices mx-auto" height="450px" width="1000px" src="https://login.smoobu.com/es/cockpit/widget/show-calendar-iframe/1441391/c9ff64ae37c55f37019fa9a8bafdb5ba285b4307dccd9ca8b4a321793304d85f"></iframe></div>
+
+<h3 class="my-5 md:mx-5 lg:mx-0 text-2xl text-center md:text-left text-sky-700 font-bold border-b-2 leading-8">{t("calendariodispapartamento")}</h3>
+
+		<div id="smoobuCalendarIframe">  <link rel="stylesheet" type="text/css" href="https://login.smoobu.com/css/singleCalendarWidgetIframe.css">  <iframe class="smallDevices mx-auto" height="540px" width="280px" src="https://login.smoobu.com/es/cockpit/widget/show-calendar-iframe/1596016/a866b6630c96062d50400032446d3dcd39f2ecf97d73e2ced3482154adebd9dd"></iframe>  <iframe class="bigDevices mx-auto" height="450px" width="1000px" src="https://login.smoobu.com/es/cockpit/widget/show-calendar-iframe/1596016/a866b6630c96062d50400032446d3dcd39f2ecf97d73e2ced3482154adebd9dd"></iframe></div>
+          ) : selectedHouse.id === 2 ? (
+
+          <h3 class="my-5 md:mx-5 lg:mx-0 text-2xl text-center md:text-left text-sky-700 font-bold border-b-2 leading-8">{t("calendariodispcasa")}</h3>
+
+            <div id="smoobuCalendarIframe">
+              <link
+                rel="stylesheet"
+                type="text/css"
+                href="https://login.smoobu.com/css/singleCalendarWidgetIframe.css"
+              />
+              <iframe
+                class="smallDevices mx-auto"
+                height="540px"
+                width="280px"
+                src="https://login.smoobu.com/es/cockpit/widget/show-calendar-iframe/1422470/e100fd764a2066b14fce583e4fc82a7255dec494a7fb27c2632a12aa3a8f768a"
+              />
+              <iframe
+                class="bigDevices mx-auto"
+                height="450px"
+                width="1000px"
+                src="https://login.smoobu.com/es/cockpit/widget/show-calendar-iframe/1422470/e100fd764a2066b14fce583e4fc82a7255dec494a7fb27c2632a12aa3a8f768a"
+              />
+            </div>
+
+            <h3
+    class="my-5 md:mx-5 lg:mx-0 text-2xl text-center md:text-left text-sky-700 font-bold border-b-2 leading-8"
+  >
+    {t("calendariodispapartamento")}
+  </h3>
+
+  <div class="">FALTA CODIGO</div>
+
+          ) : selectedHouse.id === 3 ? (
+          <h3 class="my-5 md:mx-5 lg:mx-0 text-2xl text-center md:text-left text-sky-700 font-bold border-b-2 leading-8">{t("tituloreservar")}</h3>
+            <div id="smoobuCalendarIframe">
+              
+              <link
+                rel="stylesheet"
+                type="text/css"
+                href="https://login.smoobu.com/css/singleCalendarWidgetIframe.css"
+              />
+              <iframe
+                class="smallDevices mx-auto"
+                height="540px"
+                width="280px"
+                src="https://login.smoobu.com/es/cockpit/widget/show-calendar-iframe/1441395/2f73701c34cafa650a96534a0f468a4f1a668d36a82b9e04d8801e376af2336c"
+              />
+              <iframe
+                class="bigDevices mx-auto"
+                height="450px"
+                width="1000px"
+                src="https://login.smoobu.com/es/cockpit/widget/show-calendar-iframe/1441395/2f73701c34cafa650a96534a0f468a4f1a668d36a82b9e04d8801e376af2336c"
+              />
+            </div>
+          ) : (
+            <p>Otro contenido para ID diferente</p>
+          )}
+        </>
+      ) : (
+        <p>No hay casas</p>
+      )
+    }
   </div>
 </div>

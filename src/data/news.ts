@@ -12,7 +12,7 @@ export const lastNews: News[] = [
   },
   {
     id: 2,
-    img: '/figueiras/news/foto2.webp',
+    img: '/figueiras/news/foto3.webp',
     title_es: 'La costa del Occidente, reconocida como mejor destino turístico de España',
     title_en: 'The western coast, recognized as the best tourist destination in Spain',
     title_de: 'Die Westküste, anerkannt als bestes Touristenziel in Spanien',
