@@ -43,9 +43,12 @@ const t = useTranslations(lang);
                   </h3>
                   <p class="text-white">{description}</p>
                   <p class="text-white">{house.registerNumber}</p>
-                  <button class="text-white border-white border rounded-3xl p-4 hover:bg-sky-700 hover:border-sky-700 hover:text-white">
+                  <a
+                    href={house.url}
+                    class="text-white border-white border rounded-3xl p-4 hover:bg-sky-700 hover:border-sky-700 hover:text-white"
+                  >
                     {t("ver")} {title}
-                  </button>
+                  </a>
                 </div>
                 <img
                   src={house.bookingImg}

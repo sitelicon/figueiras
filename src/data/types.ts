@@ -32,6 +32,7 @@ export interface House {
   description_de: string;
   registerNumber: string;
   bookingImg: string;
+  url: string;
 }
 
 export type FigueirasHouse = 'Alameda 23' | 'Jovellanos 19' | 'Alameda 33';

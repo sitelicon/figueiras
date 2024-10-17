@@ -16,6 +16,7 @@ export const homeHouses: House[] = [
       'Willkommen in einem unserer Landhäuser in Asturien in der Nähe des Meeres! Alameda 33 ist ein komplett renoviertes Ferienhaus im Zentrum des ruhigen Dorfes Figueras, gegenüber von Ribadeo. Es bietet Platz für 8 Gäste in 4 Schlafzimmern, verfügt über 3 komplette Badezimmer, ein geräumiges Wohnzimmer, eine voll ausgestattete Küche und einen ruhigen 20 m² großen Außenbereich mit einer kleinen Veranda, auf der Sie angenehme Abende verbringen können. Im Winter können Sie es schließen und den Pelletofen anzünden. Bettwäsche, Handtücher und ein Willkommenspaket sind inklusive. Genießen Sie Ihre Ferienvermietung in der Nähe von Ribadeo!',
     registerNumber: 'VV-2060-AS',
     bookingImg: '/figueiras/bookingalameda33.png',
+    url: '/figueiras/alameda33',
   },
   {
     id: 2,
@@ -32,6 +33,7 @@ export const homeHouses: House[] = [
       'Kommen Sie in unser Landhaus in Asturien mit Ihrem Hund! Willkommen in Jovellanos, im malerischen Küstendorf Ría Eo-Ribadeo, Figueras. Dieses Ferienhaus kann als komplettes Haus für 6 Personen mit 2 kompletten Badezimmern oder als Wohnung für 3 Personen mit 1 komplettem Badezimmer gemietet werden. In beiden Optionen beinhaltet das Haus ein Wohnzimmer mit einem Holzofen für gemütliche Nächte, eine voll ausgestattete Küche und einen ruhigen 20 m² großen Patio für besondere Momente. Bettwäsche, Handtücher und ein Willkommenspaket sind inklusive. Sie werden sich wie zu Hause fühlen, und Ihr Haustier ist ebenfalls willkommen!',
     registerNumber: 'VV-1602-AS',
     bookingImg: '/figueiras/bookingjovellanos.png',
+    url: '/figueiras/jovellanos',
   },
   {
     id: 3,
@@ -48,5 +50,6 @@ export const homeHouses: House[] = [
       'Verbringen Sie ein paar Tage in unserem Landhaus in Asturien! Genießen Sie ein komplettes Haus im Zentrum eines ruhigen Dorfes, ideal für eine Auszeit. Das Ferienhaus bietet Platz für 5 Gäste in 3 komfortablen Schlafzimmern, verfügt über 2 komplette Badezimmer, ein Wohnzimmer mit einem Pelletofen für die gemütlichsten Abende und eine voll ausgestattete Küche. Bettwäsche, Handtücher und ein Willkommenspaket sind inklusive. Genießen Sie Ihren Aufenthalt in diesem schönen Küstendorf der Ría Eo-Ribadeo!',
     registerNumber: 'VV-1823-AS',
     bookingImg: '/figueiras/bookingalameda23.png',
+    url: '/figueiras/alameda23'
   },
 ];
