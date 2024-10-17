@@ -1,25 +1,25 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import RentForm from '../../components/RentForm.astro';
-import CarouselHome from '../../components/CarouselHome.astro';
-import Brands from '../../components/Brands.astro';
-import RiaEoRibadeo from '../../components/RiaEoRibadeo.astro';
-import House from '../../components/House.astro';
-import Reviews from '../../components/Reviews.astro';
-import OtherPlaces from '../../components/OtherPlaces.astro';
-import LastNews from '../../components/LastNews.astro';
-import Footer from '../../components/Footer.astro';
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import RentForm from "../../components/RentForm.astro";
+import CarouselHome from "../../components/CarouselHome.astro";
+import Brands from "../../components/Brands.astro";
+import RiaEoRibadeo from "../../components/RiaEoRibadeo.astro";
+import House from "../../components/House.astro";
+import Reviews from "../../components/Reviews.astro";
+import OtherPlaces from "../../components/OtherPlaces.astro";
+import LastNews from "../../components/LastNews.astro";
+import Footer from "../../components/Footer.astro";
 
 export function getStaticPaths() {
-  return [{ params: { language: 'en' } }, { params: { language: 'de' } }];
+  return [{ params: { language: "en" } }, { params: { language: "de" } }];
 }
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title={t('title.home')} meta={t('meta.home')}>
+<Layout title={t("title.home")} meta={t("meta.home")}>
   <section class="block w-full">
     <CarouselHome />
   </section>
@@ -28,7 +28,7 @@ const t = useTranslations(lang);
     <RentForm />
   </section>
 
-  <section class="pb-20">
+  <section class="pb-10 md:pb-20">
     <Brands />
   </section>
 
@@ -36,7 +36,7 @@ const t = useTranslations(lang);
     <RiaEoRibadeo />
   </section>
 
-  <section class="pt-32">
+  <section class="pt-20 md:pt-32">
     <House />
   </section>
 
@@ -59,10 +59,10 @@ const t = useTranslations(lang);
 
 <script>
   // Core de Swiper y estilos
-  import Swiper from 'swiper';
-  import 'swiper/css';
+  import Swiper from "swiper";
+  import "swiper/css";
   // Módulo Navigation de Swiper y estilos
-  import { Navigation } from 'swiper/modules';
-  import { Autoplay } from 'swiper/modules';
-  import 'swiper/css/navigation';
+  import { Navigation } from "swiper/modules";
+  import { Autoplay } from "swiper/modules";
+  import "swiper/css/navigation";
 </script>

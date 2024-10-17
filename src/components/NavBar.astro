@@ -1,12 +1,12 @@
 ---
-import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import {
   getLangFromUrl,
   useTranslations,
   useTranslatedPath,
-} from '../i18n/utils';
-import { languages } from '../i18n/ui';
-import type { NavBarItems } from '../data/types';
+} from "../i18n/utils";
+import { languages } from "../i18n/ui";
+import type { NavBarItems } from "../data/types";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -14,24 +14,24 @@ const translatedPath = useTranslatedPath(lang);
 
 const navBarItems: NavBarItems[] = [
   {
-    route: '',
-    title: t('nav.home'),
+    route: "",
+    title: t("nav.home"),
   },
   {
-    route: 'jovellanos',
-    title: t('nav.jovellanos'),
+    route: "jovellanos",
+    title: t("nav.jovellanos"),
   },
   {
-    route: 'alameda23',
-    title: t('nav.alameda23'),
+    route: "alameda23",
+    title: t("nav.alameda23"),
   },
   {
-    route: 'alameda33',
-    title: t('nav.alameda33'),
+    route: "alameda33",
+    title: t("nav.alameda33"),
   },
   {
-    route: 'contacto',
-    title: t('nav.contact'),
+    route: "contacto",
+    title: t("nav.contact"),
   },
 ];
 ---
@@ -51,7 +51,7 @@ const navBarItems: NavBarItems[] = [
         />
       </a>
       <div class="block lg:hidden">
-        <MenuIcon class="w-6 h-6 mt-6 text-gray-800" />
+        <MenuIcon class="w-8 h-8 mt-8 mr-2 text-gray-800" />
       </div>
     </div>
     <MenuItems class="hidden lg:flex lg:items-center lg:ml-auto">
@@ -62,7 +62,7 @@ const navBarItems: NavBarItems[] = [
           {
             Object.entries(languages).map(([lang, label]) => (
               <li>
-                {lang === 'es' ? (
+                {lang === "es" ? (
                   <a href={`/figueiras`}>{label}</a>
                 ) : (
                   <a href={`/figueiras/${lang}`}>{label}</a>
