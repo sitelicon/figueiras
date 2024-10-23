@@ -1,6 +1,6 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { carouselhome } from '../data/carouselhome.ts';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { carouselhome } from "../data/carouselhome.ts";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,9 +13,9 @@ const t = useTranslations(lang);
       class="absolute z-50 inset-0 flex items-center justify-center sm:w-[1000px] h-48 sm:h-full pt-14 sm:pt-2 mx-auto"
     >
       <div class="text-center text-gray-50 uppercase lg:mb-24">
-        <p class="text-2xl lg:text-4xl">{t('header.welcome')}</p>
-        <h1 class="text-3xl lg:text-5xl font-bold">CASAS DAS FIGUEIRAS</h1>
-        <p class="text-xl lg:text-2xl pt-2">{t('header.subtitle')}</p>
+        <p class="text-2xl lg:text-4xl">{t("header.welcome")}</p>
+        <h3 class="text-3xl lg:text-5xl font-bold">CASAS DAS FIGUEIRAS</h3>
+        <h2 class="text-xl lg:text-2xl pt-2">{t("header.subtitle")}</h2>
       </div>
     </div>
     <div id="CarouselHome">
@@ -45,15 +45,15 @@ const t = useTranslations(lang);
 
 <script>
   // Core de Swiper y estilos
-  import Swiper from 'swiper';
-  import 'swiper/css';
+  import Swiper from "swiper";
+  import "swiper/css";
   // Módulo Navigation de Swiper y estilos
-  import { Navigation } from 'swiper/modules';
-  import { Autoplay } from 'swiper/modules';
-  import 'swiper/css/navigation';
+  import { Navigation } from "swiper/modules";
+  import { Autoplay } from "swiper/modules";
+  import "swiper/css/navigation";
 
   // Configurar Swiper
-  const swiper = new Swiper('#CarouselHome .swiper', {
+  const swiper = new Swiper("#CarouselHome .swiper", {
     modules: [Navigation, Autoplay], // definir los módulos a usar
     loop: true, // definir si los slides estarán en bucle
     autoplay: {
@@ -64,8 +64,8 @@ const t = useTranslations(lang);
     spaceBetween: 40, // separación entre slides en px
     navigation: {
       // definir botones next y prev para el módulo Navigation
-      prevEl: '.swiper-button-prev',
-      nextEl: '.swiper-button-next',
+      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next",
     },
   });
 </script>

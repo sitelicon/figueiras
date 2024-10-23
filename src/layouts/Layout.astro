@@ -20,6 +20,26 @@ const { title, meta } = Astro.props;
     <meta name="description" content={meta} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/figueiras/favicon.png" />
+    <link
+      rel="alternate"
+      href="https://www.casasdasfigueiras.es/"
+      hreflang="es"
+    />
+    <link
+      rel="alternate"
+      href="https://www.casasdasfigueiras.es/en"
+      hreflang="en"
+    />
+    <link
+      rel="alternate"
+      href="https://www.casasdasfigueiras.es/de"
+      hreflang="de"
+    />
+    <link
+      rel="alternate"
+      href="https://www.casasdasfigueiras.es/"
+      hreflang="x-default"
+    />
     <meta name="generator" content={Astro.generator} />
     <link href="/figueiras/fonts/fonts.css" rel="stylesheet" />
     <link
@@ -32,6 +52,18 @@ const { title, meta } = Astro.props;
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-221395340-1"></script>
     <script src="/figueiras/js/google.js" type="module"></script>
+    <script src="/figueiras/js/meta.js" type="module"></script>
+
+    <!-- Meta Pixel Code -->
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=581992450826524&ev=PageView&noscript=1"
+      /></noscript
+    >
+    <!-- End Meta Pixel Code -->
     <title>{title}</title>
   </head>
 
@@ -40,5 +72,14 @@ const { title, meta } = Astro.props;
   >
     <NavBar />
     <slot />
+
+    <!-- Start of HubSpot Embed Code -->
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js-eu1.hs-scripts.com/27159505.js"></script>
+    <!-- End of HubSpot Embed Code -->
   </body>
 </html>

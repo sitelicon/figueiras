@@ -1,15 +1,16 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import RentForm from '../../components/RentForm.astro';
-import Footer from '../../components/Footer.astro';
-import CalendarioSmoobu from '../../components/ficha/CalendarioCasa.astro';
-import Caracteristicas from '../../components/ficha/Caracteristicas.astro';
-import Certificaciones from '../../components/ficha/Certificaciones.astro';
-import Localizacion from '../../components/ficha/Localizacion.astro';
-import Encontranos from '../../components/ficha/Encontranos.astro';
-import Carousel from '../../components/ficha/Carousel.astro';
-import TablePrecios from '../../components/ficha/TablePrecios.astro';
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import RentForm from "../../components/RentForm.astro";
+import Footer from "../../components/Footer.astro";
+import CalendarioSmoobu from "../../components/ficha/CalendarioCasa.astro";
+import Caracteristicas from "../../components/ficha/Caracteristicas.astro";
+import Certificaciones from "../../components/ficha/Certificaciones.astro";
+import Localizacion from "../../components/ficha/Localizacion.astro";
+import Encontranos from "../../components/ficha/Encontranos.astro";
+import Carousel from "../../components/ficha/Carousel.astro";
+import TablePrecios from "../../components/ficha/TablePrecios.astro";
+import CasaIconos from "../../components/ficha/CasaIconos.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,26 +18,26 @@ const t = useTranslations(lang);
 const houses = [
   {
     id: 1,
-    name: 'jovellanos',
+    name: "jovellanos",
   },
   {
     id: 2,
-    name: 'alameda23',
+    name: "alameda23",
   },
   {
     id: 3,
-    name: 'alameda33',
+    name: "alameda33",
   },
 ];
 
 export function getStaticPaths() {
   return [
-    { params: { language: 'en', house: 'jovellanos' } },
-    { params: { language: 'en', house: 'alameda23' } },
-    { params: { language: 'en', house: 'alameda33' } },
-    { params: { language: 'de', house: 'jovellanos' } },
-    { params: { language: 'de', house: 'alameda23' } },
-    { params: { language: 'de', house: 'alameda33' } },
+    { params: { language: "en", house: "jovellanos" } },
+    { params: { language: "en", house: "alameda23" } },
+    { params: { language: "en", house: "alameda33" } },
+    { params: { language: "de", house: "jovellanos" } },
+    { params: { language: "de", house: "alameda23" } },
+    { params: { language: "de", house: "alameda33" } },
   ];
 }
 
@@ -44,7 +45,7 @@ const { house } = Astro.params;
 
 const selectedHouse = houses.find((h) => h.name === house);
 const htmltextocasa = t(`${selectedHouse?.name}.texto` as any);
-const htmltextogeneral = t('textogeneral');
+const htmltextogeneral = t("textogeneral");
 ---
 
 <Layout
@@ -72,31 +73,11 @@ const htmltextogeneral = t('textogeneral');
 
       <CalendarioSmoobu />
 
-      <ul class="flex flex-wrap pt-4 pb-4 mt-6 border-b border-t">
-        <li class="flex items-center mr-3">
-          <img src="/figueiras/icodormitorios_p.jpg" />
-          <span class="border border-black px-2 py-1">6</span>
-        </li>
-        <li class="flex items-center mr-3">
-          <img src="/figueiras/icobanos_p.jpg" />
-          <span class="border border-black px-2 py-1">3</span>
-        </li>
-        <li class="flex items-center mr-3">
-          <img src="/figueiras/icoparcela_p.jpg" />
-          <span class="border border-black px-2 py-1">20</span>
-        </li>
-        <li class="flex items-center mr-3">
-          <img src="/figueiras/icosuperficiecasa_p.jpg" />
-          <span class="border border-black px-2 py-1">125</span>
-        </li>
-        <li class="flex items-center mr-3">
-          <img src="/figueiras/icowifi_p.jpg" />
-        </li>
-      </ul>
+      <CasaIconos />
 
       <div class="w-full mt-10">
         <h2 class="text-center lg:text-4xl text-sky-700 font-bold">
-          {t('alquiler_vacacional_asturias')}
+          {t("alquiler_vacacional_asturias")}
         </h2>
 
         <div class="container mx-auto p-4">
@@ -106,7 +87,7 @@ const htmltextogeneral = t('textogeneral');
               <h3
                 class="my-5 text-2xl text-sky-700 font-bold border-b-2 leading-8"
               >
-                {t('descripcion.alojamiento_rural')}
+                {t("descripcion.alojamiento_rural")}
               </h3>
 
               <TablePrecios />
@@ -121,13 +102,13 @@ const htmltextogeneral = t('textogeneral');
               <Caracteristicas />
               <Localizacion />
               <p class="my-2">
-                {t('tipo.casa_apartamento')}
+                {t("tipo.casa_apartamento")}
                 {selectedHouse?.name?.toUpperCase()}
                 <br />
 
                 Casas Das Figueiras<br />
 
-                {t('ubicacion.centro_figueiras')}.
+                {t("ubicacion.centro_figueiras")}.
               </p>
               <Encontranos />
 
