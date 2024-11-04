@@ -1,8 +1,8 @@
-import { ui, defaultLang, showDefaultLang } from './ui';
+import { ui, defaultLang, showDefaultLang } from "./ui";
 
 export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split('/figueiras/');
-  const langParts = lang?.split('/');
+  const [, lang] = url.pathname.split("/");
+  const langParts = lang?.split("/");
   const langCode = langParts?.[0] || defaultLang;
   if (langCode in ui) return langCode as keyof typeof ui;
   return defaultLang;
@@ -16,8 +16,6 @@ export function useTranslations(lang: keyof typeof ui) {
 
 export function useTranslatedPath(lang: keyof typeof ui) {
   return function translatePath(path: string, l: string = lang) {
-    return !showDefaultLang && l === defaultLang
-      ? `/figueiras/${path}`
-      : `/figueiras/${l}/${path}`;
+    return !showDefaultLang && l === defaultLang ? `/${path}` : `/${l}/${path}`;
   };
 }

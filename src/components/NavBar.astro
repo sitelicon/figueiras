@@ -41,9 +41,9 @@ const navBarItems: NavBarItems[] = [
 >
   <Astronav>
     <div class="flex justify-between">
-      <a href="/figueiras/">
+      <a href="">
         <img
-          src="/figueiras/logofigueiras.svg"
+          src="/logofigueiras.svg"
           alt="Logo"
           width="200"
           height="100"
@@ -63,9 +63,9 @@ const navBarItems: NavBarItems[] = [
             Object.entries(languages).map(([lang, label]) => (
               <li>
                 {lang === "es" ? (
-                  <a href={`/figueiras`}>{label}</a>
+                  <a href={`/`}>{label}</a>
                 ) : (
-                  <a href={`/figueiras/${lang}`}>{label}</a>
+                  <a href={`/${lang}`}>{label}</a>
                 )}
               </li>
             ))

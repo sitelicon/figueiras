@@ -2,30 +2,30 @@
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const houses = [
-    {
-        id: 1,
-        name: "jovellanos",
-        dormitorios: "6",
-        banos: "3",
-        parcela: "20",
-        sup: "125",
-    },
-    {
-        id: 2,
-        name: "alameda23",
-        dormitorios: "3",
-        banos: "2",
-        parcela: "-",
-        sup: "-",
-    },
-    {
-        id: 3,
-        name: "alameda33",
-        dormitorios: "8",
-        banos: "3",
-        parcela: "30",
-        sup: "120",
-    },
+  {
+    id: 1,
+    name: "jovellanos",
+    dormitorios: "6",
+    banos: "3",
+    parcela: "20",
+    sup: "125",
+  },
+  {
+    id: 2,
+    name: "alameda23",
+    dormitorios: "3",
+    banos: "2",
+    parcela: "-",
+    sup: "-",
+  },
+  {
+    id: 3,
+    name: "alameda33",
+    dormitorios: "8",
+    banos: "3",
+    parcela: "30",
+    sup: "120",
+  },
 ];
 
 const lang = getLangFromUrl(Astro.url);
@@ -37,25 +37,25 @@ const selectedHouse = houses.find((h) => h.name === house);
 ---
 
 <ul class="flex flex-wrap pt-4 pb-4 mt-6 border-b border-t">
-    <li class="flex items-center mr-3">
-        <img src="/figueiras/icodormitorios_p.jpg" />
-        <span class="border border-black px-2 py-1"
-            >{selectedHouse.dormitorios}</span
-        >
-    </li>
-    <li class="flex items-center mr-3">
-        <img src="/figueiras/icobanos_p.jpg" />
-        <span class="border border-black px-2 py-1">1</span>
-    </li>
-    <li class="flex items-center mr-3">
-        <img src="/figueiras/icoparcela_p.jpg" />
-        <span class="border border-black px-2 py-1">1</span>
-    </li>
-    <li class="flex items-center mr-3">
-        <img src="/figueiras/icosuperficiecasa_p.jpg" />
-        <span class="border border-black px-2 py-1">1</span>
-    </li>
-    <li class="flex items-center mr-3">
-        <img src="/figueiras/icowifi_p.jpg" />
-    </li>
+  <li class="flex items-center mr-3">
+    <img src="/icodormitorios_p.jpg" />
+    <span class="border border-black px-2 py-1"
+      >{selectedHouse.dormitorios}</span
+    >
+  </li>
+  <li class="flex items-center mr-3">
+    <img src="/icobanos_p.jpg" />
+    <span class="border border-black px-2 py-1">1</span>
+  </li>
+  <li class="flex items-center mr-3">
+    <img src="/icoparcela_p.jpg" />
+    <span class="border border-black px-2 py-1">1</span>
+  </li>
+  <li class="flex items-center mr-3">
+    <img src="/icosuperficiecasa_p.jpg" />
+    <span class="border border-black px-2 py-1">1</span>
+  </li>
+  <li class="flex items-center mr-3">
+    <img src="/icowifi_p.jpg" />
+  </li>
 </ul>
