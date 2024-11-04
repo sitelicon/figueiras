@@ -1,18 +1,18 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import RentForm from '../../components/RentForm.astro';
-import Footer from '../../components/Footer.astro';
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import RentForm from "../../components/RentForm.astro";
+import Footer from "../../components/Footer.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 export function getStaticPaths() {
-  return [{ params: { language: 'en' } }, { params: { language: 'de' } }];
+  return [{ params: { language: "en" } }, { params: { language: "de" } }];
 }
 ---
 
-<Layout title={t('title.contacto')} meta={t('meta.contacto')}>
+<Layout title={t("title.contacto")} meta={t("meta.contacto")}>
   <div class="block sm:flex flex-col justify-center items-center">
     <section class="pt-10 w-full">
       <RentForm />
@@ -23,14 +23,15 @@ export function getStaticPaths() {
     >
       <div class="flex w-full flex-wrap md:flex-nowrap justify-center">
         <div class="w-full md:w-2/6 p-4">
-          <h1 class="text-lg font-medium text-sky-700 mb-6">CONTACTO</h1>
+          <h1 class="text-lg font-medium text-sky-700 mb-6 uppercase">
+            {t("contact.title")}
+          </h1>
           <p class="text-sm mb-6">
-            Puede contactar con nosotros por teléfono, email o a través de
-            nuestro formulario.<br /><br />
+            {t("contact.subtitle")}<br /><br />
 
             <span class="text-lg">Casas Das Figueiras</span><br /><br />
 
-            España
+            {t("contact.country")}
           </p>
           <p>
             <a href="mailto:reservas@casasdasfigueiras.es"
@@ -44,18 +45,21 @@ export function getStaticPaths() {
         </div>
         <div class="w-full md:w-2/4 p-4">
           <h2 class="text-xl font-medium text-sky-700 mb-6">
-            Formulario de contacto
+            {t("contact.form")}
           </h2>
-          <script
-            charset="utf-8"
-            type="text/javascript"
-            src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-          <script>
-            hbspt.forms.create({
-              region: 'eu1',
-              portalId: '27159505',
-              formId: '8adc1b31-7980-4a3a-ba88-9613cbfbab51',
-            });
+          <script client:load>
+            const script = document.createElement("script");
+            script.src = "//js-eu1.hsforms.net/forms/embed/v2.js";
+            script.async = true;
+            document.body.appendChild(script);
+
+            script.onload = () => {
+              hbspt.forms.create({
+                region: "eu1",
+                portalId: "27159505",
+                formId: "8adc1b31-7980-4a3a-ba88-9613cbfbab51",
+              });
+            };
           </script>
         </div>
       </div>
