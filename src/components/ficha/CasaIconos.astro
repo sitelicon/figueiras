@@ -40,20 +40,20 @@ const selectedHouse = houses.find((h) => h.name === house);
   <li class="flex items-center mr-3">
     <img src="/icodormitorios_p.jpg" />
     <span class="border border-black px-2 py-1"
-      >{selectedHouse.dormitorios}</span
+      >{selectedHouse?.dormitorios}</span
     >
   </li>
   <li class="flex items-center mr-3">
     <img src="/icobanos_p.jpg" />
-    <span class="border border-black px-2 py-1">1</span>
+    <span class="border border-black px-2 py-1">{selectedHouse?.banos}</span>
   </li>
   <li class="flex items-center mr-3">
     <img src="/icoparcela_p.jpg" />
-    <span class="border border-black px-2 py-1">1</span>
+    <span class="border border-black px-2 py-1">{selectedHouse?.parcela}</span>
   </li>
   <li class="flex items-center mr-3">
     <img src="/icosuperficiecasa_p.jpg" />
-    <span class="border border-black px-2 py-1">1</span>
+    <span class="border border-black px-2 py-1">{selectedHouse?.sup}</span>
   </li>
   <li class="flex items-center mr-3">
     <img src="/icowifi_p.jpg" />
