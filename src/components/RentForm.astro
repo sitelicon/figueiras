@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -7,16 +7,13 @@ const t = useTranslations(lang);
 
 <div class="flex flex-col gap-5">
   <h2 class="uppercase text-2xl sm:text-4xl text-sky-700 font-bold text-center">
-    {t('tituloreservar')}
+    {t("tituloreservar")}
     <span class="font-normal">Casa das Figueiras</span>
   </h2>
 </div>
 
 <div class="w-full mx-auto lg:w-[1000px] py-5">
-  <div
-    id="widget1"
-    class="widget loading h-[261px] md:h-[150px] overflow-hidden"
-  >
+  <div id="widget1" class="widget loading overflow-hidden">
     <!-- Contenido del widget -->
     <div id="apartmentIframeAll">
       <script
@@ -25,9 +22,9 @@ const t = useTranslations(lang);
       ></script>
       <script>
         BookingToolIframe.initialize({
-          url: 'https://login.smoobu.com/es/booking-tool/iframe/485990?apartmentGroups[]=1441395&apartmentGroups[]=1596016&apartmentGroups[]=1441391&apartmentGroups[]=1422470',
-          baseUrl: 'https://login.smoobu.com',
-          target: '#apartmentIframeAll',
+          url: "https://login.smoobu.com/es/booking-tool/iframe/485990?apartmentGroups[]=1441395&apartmentGroups[]=1596016&apartmentGroups[]=1441391&apartmentGroups[]=1422470",
+          baseUrl: "https://login.smoobu.com",
+          target: "#apartmentIframeAll",
         });
       </script>
     </div>
@@ -37,20 +34,19 @@ const t = useTranslations(lang);
 <style>
   .loading {
     opacity: 0.3;
+    height: 220px;
     pointer-events: none;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
   }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const widgets = document.querySelectorAll('.widget');
+  document.addEventListener("DOMContentLoaded", () => {
+    const widgets = document.querySelectorAll(".widget");
 
     widgets.forEach((widget) => {
       setTimeout(() => {
-        widget.classList.remove('loading');
+        widget.classList.remove("loading");
       }, 1000);
     });
   });
