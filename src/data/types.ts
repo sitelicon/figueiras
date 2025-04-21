@@ -3,7 +3,7 @@ export interface NavBarItems {
   title: string;
 }
 
-type Langs = 'Español' | 'English' | 'Deustch';
+type Langs = "Español" | "English" | "Deustch";
 
 export interface LangsI {
   lang: Langs;
@@ -18,6 +18,7 @@ export interface Brands {
 export interface CarouselHome {
   alt: string;
   src: string;
+  srcmobile: string;
 }
 
 export interface House {
@@ -35,7 +36,7 @@ export interface House {
   url: string;
 }
 
-export type FigueirasHouse = 'Alameda 23' | 'Jovellanos 19' | 'Alameda 33';
+export type FigueirasHouse = "Alameda 23" | "Jovellanos 19" | "Alameda 33";
 
 export interface Review {
   id: number;
@@ -64,11 +65,11 @@ export interface News {
 }
 
 type PaymentMethods =
-  | 'Visa'
-  | 'Mastercard'
-  | 'PayPal'
-  | 'American Express'
-  | 'Discover';
+  | "Visa"
+  | "Mastercard"
+  | "PayPal"
+  | "American Express"
+  | "Discover";
 
 export interface Payments {
   id: number;
