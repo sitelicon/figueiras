@@ -3,11 +3,6 @@ import type { CarouselHome } from "./types";
 export const carouselhome: CarouselHome[] = [
   {
     alt: "CASAS DAS FIGUEIRAS - Alquiler casas vacacionales",
-    src: "/mainslider/FeriadelaOstra_11zon.webp",
-    srcmobile: "/mainslider/FeriadelaOstraM_11zon.webp",
-  },
-  {
-    alt: "CASAS DAS FIGUEIRAS - Alquiler casas vacacionales",
     src: "/mainslider/banner1.webp",
     srcmobile: "/mainslider/banner1.webp",
   },
