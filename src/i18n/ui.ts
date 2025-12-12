@@ -72,7 +72,7 @@ export const ui = {
     "temporada.alta": "Temp. alta",
     "tipo.casa_apartamento": "Casa/Apartamento",
     "ubicacion.centro_figueiras": "Situada en el centro de Figueiras",
-    "restricciones.vd_min_3_noches": "V-D - Min 3 noches / V-D min 2 noches",
+    "restricciones.vd_min_3_noches": "D-J Min 3 noches/ V-S Min 2 noches",
     "restricciones.min_3_noches": "Min 3 noches",
     "restricciones.min_6_noches": "Min 6 noches",
     "capacidad.3_pers.jovellanos": "Cap 3 pers",
@@ -210,7 +210,8 @@ export const ui = {
     "temporada.alta": "High season",
     "tipo.casa_apartamento": "House/Apartment",
     "ubicacion.centro_figueiras": "Located in the center of Figueiras",
-    "restricciones.vd_min_3_noches": "F-S - Min 3 nights",
+    "restricciones.vd_min_3_noches":
+      "Sun-Thurs. min 3 nights/ Fri - Sat min 2 nights",
     "restricciones.min_3_noches": "Min 3 nights",
     "restricciones.min_6_noches": "Min 6 nights",
     "capacidad.3_pers": "Cap 3 pers",
@@ -306,7 +307,8 @@ export const ui = {
     "temporada.alta": "Hauptsaison",
     "tipo.casa_apartamento": "Haus/Wohnung",
     "ubicacion.centro_figueiras": "Im Zentrum von Figueiras gelegen",
-    "restricciones.vd_min_3_noches": "F-S - Min 3 Nächte",
+    "restricciones.vd_min_3_noches":
+      "Son-Don min 3 Nacht / Frei-Sam min 2 Nacht",
     "restricciones.min_3_noches": "Min 3 Nächte",
     "restricciones.min_6_noches": "Min 6 Nächte",
     "capacidad.3_pers": "Kapazität 3 Pers",
